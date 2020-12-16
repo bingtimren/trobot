@@ -26,5 +26,7 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Run all tests
-        run: npm run test
+      - name: Clean install dependencies, build, and run all tests
+        run: |
+          npm ci
+          npm run test
