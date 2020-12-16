@@ -49,13 +49,13 @@ export function getDirectionDescFromMapDirection(
  * Return numeric enum {@link MapDirection} mapped from name, throw Error if name not found
  * @param direction : name of direction, e.g. WEST
  */
-export function getMapDirectionFromName(direction: string): MapDirection {
+export function getMapDirectionFromName(
+  direction: string
+): MapDirection | Error {
   const dirLookedUp = MapDirection[direction as keyof typeof MapDirection];
-  if (typeof dirLookedUp !== "number") {
-    throw new Error(`Unknown direction name: ${direction}`);
-  } else {
-    return dirLookedUp;
-  }
+  return typeof dirLookedUp === "number"
+    ? dirLookedUp
+    : new Error(`Unknown direction name: ${direction}`);
 }
 
 /**
@@ -63,13 +63,13 @@ export function getMapDirectionFromName(direction: string): MapDirection {
  * @param direction : numeric enum index, e.g. 0 for WEST
  */
 
-export function getMapDirectionFromIndex(direction: number) {
+export function getMapDirectionFromIndex(
+  direction: number
+): MapDirection | Error {
   const dirLookedUp = MapDirection[direction];
-  if (typeof dirLookedUp !== "string") {
-    throw new Error(`Direction index out of bound: ${direction}`);
-  } else {
-    return direction;
-  }
+  return typeof dirLookedUp !== "string"
+    ? new Error(`Direction index out of bound: ${direction}`)
+    : direction;
 }
 
 /**
