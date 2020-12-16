@@ -1,58 +1,60 @@
-import { HeadDirection, MapDirection } from "./map-direction";
+import {
+  getDirectionDescFromMapDirection,
+  getMapDirectionFromIndex,
+  getMapDirectionFromName,
+  MapDirection,
+  turn90Degrees,
+} from "./map-direction";
 
 const directions = ["WEST", "NORTH", "EAST", "SOUTH"];
 
 describe("map-direction.HeadDirection", () => {
-  test("should construct HeadDirection with valid names", () => {
+  test("should get MapDirection with valid names, with outwardly correct offsets", () => {
     for (let i = 0; i < directions.length; i++) {
-      const head = new HeadDirection(directions[i]);
-      expect(head.facing).toBe(i);
-      expect(
-        head.desc.xOffset === 0 ||
-          head.desc.xOffset === 1 ||
-          head.desc.xOffset === -1
-      ).toBe(true);
-      expect(
-        head.desc.yOffset === 0 ||
-          head.desc.yOffset === 1 ||
-          head.desc.yOffset === -1
-      ).toBe(true);
-      expect(Math.abs(head.desc.xOffset + head.desc.yOffset)).toBe(1);
+      const head = getMapDirectionFromName(directions[i]);
+      const { xOffset, yOffset } = getDirectionDescFromMapDirection(head);
+      expect(head).toBe(i);
+      expect(xOffset === 0 || xOffset === 1 || xOffset === -1).toBe(true);
+      expect(yOffset === 0 || yOffset === 1 || yOffset === -1).toBe(true);
+      expect(Math.abs(xOffset + yOffset)).toBe(1);
     }
   });
-  test("should construct HeadDirection with valid direction indexes", () => {
+  test("should construct MapDirection with valid direction indexes", () => {
     for (let i = 0; i < directions.length; i++) {
-      const head = new HeadDirection(i);
-      expect(head.facing).toBe(i);
-      expect(MapDirection[head.facing]).toBe(directions[i]);
+      const head = getMapDirectionFromIndex(i);
+      expect(head).toBe(i);
+      expect(MapDirection[head]).toBe(directions[i]);
     }
   });
-  test("should throw error if construct HeadDirection with invalid name", () => {
+  test("should throw error if construct HeadDirection with invalid name or index", () => {
     expect(() => {
-      new HeadDirection("Not a direction");
+      getMapDirectionFromName("Not a direction");
+    }).toThrowError();
+    expect(() => {
+      getMapDirectionFromIndex(-1);
     }).toThrowError();
   });
   test("should turn correctly", () => {
-    const head = new HeadDirection("WEST");
-    head.turn90Degrees(1);
-    expect(MapDirection[head.facing]).toBe("NORTH");
-    head.turn90Degrees(1);
-    expect(MapDirection[head.facing]).toBe("EAST");
-    head.turn90Degrees(1);
-    expect(MapDirection[head.facing]).toBe("SOUTH");
-    head.turn90Degrees(1);
-    expect(MapDirection[head.facing]).toBe("WEST");
-    head.turn90Degrees(-1);
-    expect(MapDirection[head.facing]).toBe("SOUTH");
-    head.turn90Degrees(-1);
-    expect(MapDirection[head.facing]).toBe("EAST");
-    head.turn90Degrees(-1);
-    expect(MapDirection[head.facing]).toBe("NORTH");
-    head.turn90Degrees(-1);
-    expect(MapDirection[head.facing]).toBe("WEST");
-    head.turn90Degrees(9);
-    expect(MapDirection[head.facing]).toBe("NORTH");
-    head.turn90Degrees(-14);
-    expect(MapDirection[head.facing]).toBe("SOUTH");
+    let head = getMapDirectionFromName("WEST");
+    head = turn90Degrees(head, 1);
+    expect(MapDirection[head]).toBe("NORTH");
+    head = turn90Degrees(head, 1);
+    expect(MapDirection[head]).toBe("EAST");
+    head = turn90Degrees(head, 1);
+    expect(MapDirection[head]).toBe("SOUTH");
+    head = turn90Degrees(head, 1);
+    expect(MapDirection[head]).toBe("WEST");
+    head = turn90Degrees(head, -1);
+    expect(MapDirection[head]).toBe("SOUTH");
+    head = turn90Degrees(head, -1);
+    expect(MapDirection[head]).toBe("EAST");
+    head = turn90Degrees(head, -1);
+    expect(MapDirection[head]).toBe("NORTH");
+    head = turn90Degrees(head, -1);
+    expect(MapDirection[head]).toBe("WEST");
+    head = turn90Degrees(head, 9);
+    expect(MapDirection[head]).toBe("NORTH");
+    head = turn90Degrees(head, -14);
+    expect(MapDirection[head]).toBe("SOUTH");
   });
 });
