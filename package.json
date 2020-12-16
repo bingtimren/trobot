@@ -12,7 +12,7 @@
     "fix:lint": "eslint src --ext .ts --fix",
     "test": "run-s build test:*",
     "test:lint": "eslint src --ext .ts",
-    "test:prettier": "prettier \"src/**/*.ts\" --list-different",
+    "test:prettier": "prettier src/**/*.ts --list-different",
     "test:unit": "jest -c jest.cov.config.js --testPathPattern=unit.test.ts$ --collectCoverage",
     "test:integration": "jest --testPathPattern=intg.test.ts$",
     "watch:build": "tsc -p tsconfig.json -w",
