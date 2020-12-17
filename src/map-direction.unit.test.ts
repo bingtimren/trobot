@@ -32,6 +32,8 @@ describe("map-direction.HeadDirection", () => {
   });
   test("should turn correctly", () => {
     let head: MapDirection = MapDirection.WEST;
+    head = turn90Degrees(head, 0);
+    expect(MapDirection[head]).toBe("WEST");
     head = turn90Degrees(head, 1);
     expect(MapDirection[head]).toBe("NORTH");
     head = turn90Degrees(head, 1);

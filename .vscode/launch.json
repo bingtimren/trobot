@@ -1,13 +1,18 @@
 {
   "version": "0.2.0",
   "configurations": [
-    // To debug, make sure a *.spec.ts file is active in the editor, then run a configuration
+    // To debug, make sure a Jest test file is active in the editor, 
+    // then run a configuration
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug Active Spec",
-      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/ava",
-      "runtimeArgs": ["debug", "--break", "--serial", "${file}"],
+      "name": "Debug Active Jest Test",
+      "runtimeArgs": [
+        "--inspect-brk",
+        "${workspaceRoot}/node_modules/.bin/jest",
+        "--runInBand",
+        "${file}"
+      ],
       "port": 9229,
       "outputCapture": "std",
       "skipFiles": ["<node_internals>/**/*.js"],
@@ -15,15 +20,17 @@
       // "smartStep": true
     },
     {
-      // Use this one if you're already running `yarn watch`
+      "name": "Debug All Jest Tests",
       "type": "node",
       "request": "launch",
-      "name": "Debug Active Spec (no build)",
-      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/ava",
-      "runtimeArgs": ["debug", "--break", "--serial", "${file}"],
-      "port": 9229,
-      "outputCapture": "std",
-      "skipFiles": ["<node_internals>/**/*.js"]
-      // "smartStep": true
-    }]
+      "runtimeArgs": [
+        "--inspect-brk",
+        "${workspaceRoot}/node_modules/.bin/jest",
+        "--runInBand"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229
+    }    
+  ]
 }

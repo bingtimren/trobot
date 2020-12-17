@@ -21,8 +21,8 @@
     "cov:unit": "jest --testPathPattern=unit.test.ts$ --collectCoverage",
     "cov:report": "open-cli coverage/lcov-report/index.html",
     "doc": "run-s doc:html && open-cli build/docs/index.html",
-    "doc:html": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --out build/docs",
-    "doc:json": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --json build/docs/typedoc.json",
+    "doc:html": "typedoc src/ --externalPattern '**/*.test.ts' --excludeExternals --target ES6 --mode file --out build/docs",
+    "doc:json": "typedoc src/ --externalPattern '**/*.test.ts' --excludeExternals --target ES6 --mode file --json build/docs/typedoc.json",
     "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
     "version": "standard-version",
     "reset-hard": "git clean -dfx && git reset --hard && npm i",
@@ -31,9 +31,12 @@
   "engines": {
     "node": ">=10"
   },
-  "dependencies": {},
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.19",
+    "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^4.10.0",
     "@typescript-eslint/parser": "^4.10.0",
     "commitizen": "^4.2.2",
