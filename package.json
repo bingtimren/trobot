@@ -10,10 +10,11 @@
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
     "fix:lint": "eslint src --ext .ts --fix",
-    "test": "run-s build test:*",
+    "test": "run-s test:*",
     "test:lint": "eslint src --ext .ts",
-    "test:unit": "jest -c jest.cov.config.js --testPathPattern=unit.test.ts$ --collectCoverage",
-    "test:integration": "jest --testPathPattern=intg.test.ts$",
+    "test:func": "run-s build test:func:*",
+    "test:func:unit": "jest -c jest.cov.config.js --testPathPattern=unit.test.ts$ --collectCoverage",
+    "test:func:integration": "jest --testPathPattern=intg.test.ts$",
     "check-format": "prettier src/**/*.ts --list-different",
     "watch:build": "tsc -p tsconfig.json -w",
     "watch:test": "jest --watchAll",
@@ -31,9 +32,7 @@
   "engines": {
     "node": ">=10"
   },
-  "dependencies": {
-    "uuid": "^8.3.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^26.0.19",
     "@types/uuid": "^8.3.0",
