@@ -1,6 +1,6 @@
 {
   "name": "trobot",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "The toy robot code challenge",
   "repository": "https://github.com/bingtimren/trobot",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "doc:html": "typedoc src/ --externalPattern '**/*.test.ts' --excludeExternals --target ES6 --mode file --out build/docs",
     "doc:json": "typedoc src/ --externalPattern '**/*.test.ts' --excludeExternals --target ES6 --mode file --json build/docs/typedoc.json",
     "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
-    "run":"run-s build run:launch",
+    "run": "run-s build run:launch",
     "run:launch": "node build/main/main.js",
     "version": "standard-version",
     "reset-hard": "git clean -dfx && git reset --hard && npm i",
