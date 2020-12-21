@@ -7,8 +7,8 @@ export const enum OnePieceTableErrorReason {
 }
 
 export class OnePieceTableError extends Error implements TableError {
-  constructor(readonly reason: OnePieceTableErrorReason) {
-    super();
+  constructor(readonly reason: OnePieceTableErrorReason, message: string) {
+    super(message);
   }
 }
 
@@ -50,7 +50,7 @@ export class OnePieceTable<TablePiece = {}> implements Table<TablePiece> {
     if (this.piece !== undefined && this.piece === piece) {
       return f.apply(this, args) as ReturnType<F>;
     } else {
-      return new OnePieceTableError(OnePieceTableErrorReason.NO_SUCH_PIECE);
+      return new OnePieceTableError(OnePieceTableErrorReason.NO_SUCH_PIECE, "Not on this table.");
     }
   }
 
@@ -68,7 +68,7 @@ export class OnePieceTable<TablePiece = {}> implements Table<TablePiece> {
           return this.piecePose;
         } else {
           return new OnePieceTableError(
-            OnePieceTableErrorReason.BEYOND_BOUNDARY
+            OnePieceTableErrorReason.BEYOND_BOUNDARY, 'Would fall off table.'
           );
         }
       },
@@ -82,7 +82,7 @@ export class OnePieceTable<TablePiece = {}> implements Table<TablePiece> {
       this.piecePose = pose;
       return pose;
     } else {
-      return new OnePieceTableError(OnePieceTableErrorReason.BEYOND_BOUNDARY);
+      return new OnePieceTableError(OnePieceTableErrorReason.BEYOND_BOUNDARY, 'Beyond table boundary.');
     }
   }
   isOnTable(x: number, y: number): boolean {

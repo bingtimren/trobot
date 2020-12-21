@@ -25,6 +25,8 @@
     "doc:html": "typedoc src/ --externalPattern '**/*.test.ts' --excludeExternals --target ES6 --mode file --out build/docs",
     "doc:json": "typedoc src/ --externalPattern '**/*.test.ts' --excludeExternals --target ES6 --mode file --json build/docs/typedoc.json",
     "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
+    "run":"run-s build run:launch",
+    "run:launch": "node build/main/main.js",
     "version": "standard-version",
     "reset-hard": "git clean -dfx && git reset --hard && npm i",
     "prepare-release": "run-s reset-hard test check-format doc:html version doc:publish"
@@ -40,7 +42,7 @@
     "@typescript-eslint/parser": "^4.10.0",
     "commitizen": "^4.2.2",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.8.0",
+    "eslint": "^7.16.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.22.0",
