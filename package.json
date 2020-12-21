@@ -17,7 +17,7 @@
     "test:func:integration": "jest --testPathPattern=intg.test.ts$",
     "check-format": "prettier src/**/*.ts --list-different",
     "watch:build": "tsc -p tsconfig.json -w",
-    "watch:test": "jest --watchAll",
+    "watch:test": "jest --testPathPattern=test.ts$ --watchAll",
     "cov": "run-s -c build cov:unit cov:report",
     "cov:unit": "jest --testPathPattern=unit.test.ts$ --collectCoverage",
     "cov:report": "open-cli coverage/lcov-report/index.html",

@@ -46,7 +46,17 @@ export function getDirectionDescFromMapDirection(
 }
 
 /**
- * Return numeric enum {@link MapDirection} mapped from name, throw Error if name not found
+ * Returns name of direction
+ * @param direction 
+ */
+export function getDirectionNameFromDirection(
+  direction: MapDirection
+): string {
+  return MapDirection[direction];
+}
+
+/**
+ * Return numeric enum {@link MapDirection} mapped from name, return Error if name not found
  * @param direction : name of direction, e.g. WEST
  */
 export function getMapDirectionFromName(
@@ -59,7 +69,7 @@ export function getMapDirectionFromName(
 }
 
 /**
- * Return numeric enum {@link MapDirection} from numeric index, throw Error if index out of bound
+ * Return numeric enum {@link MapDirection} from numeric index, return Error if index out of bound
  * @param direction : numeric enum index, e.g. 0 for WEST
  */
 

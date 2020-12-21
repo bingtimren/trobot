@@ -26,7 +26,7 @@ describe("map-direction.HeadDirection", () => {
       expect(MapDirection[head]).toBe(directions[i]);
     }
   });
-  test("should throw error if construct HeadDirection with invalid name or index", () => {
+  test("should return error if construct HeadDirection with invalid name or index", () => {
     expect(getMapDirectionFromName("Not a direction")).toBeInstanceOf(Error);
     expect(getMapDirectionFromIndex(-1)).toBeInstanceOf(Error);
   });
