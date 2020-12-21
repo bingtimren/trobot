@@ -11,7 +11,6 @@ export function commandLineHandler(
   commands: CLIDescriptor[],
   enableHelp = true
 ): (line: string) => string | Error {
-
   return (line: string): string | Error => {
     if (enableHelp && line.trim() === "help") {
       return commands
@@ -31,6 +30,5 @@ export function commandLineHandler(
       }
     }
     return new Error("Unknown command.");
-  }
-
+  };
 }
