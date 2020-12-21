@@ -47,11 +47,9 @@ export function getDirectionDescFromMapDirection(
 
 /**
  * Returns name of direction
- * @param direction 
+ * @param direction
  */
-export function getDirectionNameFromDirection(
-  direction: MapDirection
-): string {
+export function getDirectionNameFromDirection(direction: MapDirection): string {
   return MapDirection[direction];
 }
 

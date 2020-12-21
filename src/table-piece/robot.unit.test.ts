@@ -32,7 +32,9 @@ describe("Robot", () => {
     expect(robot.getPose()).toBeInstanceOf(Error);
   });
   test("Robot, put on table fails, then success, should hold the table", () => {
-    mockTable.placePiece.mockReturnValueOnce(new Error()).mockReturnValueOnce(pose);
+    mockTable.placePiece
+      .mockReturnValueOnce(new Error())
+      .mockReturnValueOnce(pose);
     expect(robot.placeOn(mockTable, pose)).toBeInstanceOf(Error);
     expect(robot.placeOn(mockTable, pose)).toEqual(pose);
     expect(mockTable.placePiece).toBeCalledTimes(2);
@@ -51,18 +53,42 @@ describe("Robot", () => {
       .mockReturnValueOnce({ x: 0, y: 0, facing: MapDirection.WEST })
       .mockReturnValueOnce({ x: 0, y: 0, facing: MapDirection.NORTH });
     robot.moveForward();
-    expect(mockTable.movePiece).lastCalledWith(robot, { xOffset: 1, yOffset: 0, turn: 0 });
+    expect(mockTable.movePiece).lastCalledWith(robot, {
+      xOffset: 1,
+      yOffset: 0,
+      turn: 0,
+    });
     robot.moveForward();
-    expect(mockTable.movePiece).lastCalledWith(robot, { xOffset: 0, yOffset: -1, turn: 0 });
+    expect(mockTable.movePiece).lastCalledWith(robot, {
+      xOffset: 0,
+      yOffset: -1,
+      turn: 0,
+    });
     robot.moveForward();
-    expect(mockTable.movePiece).lastCalledWith(robot, { xOffset: -1, yOffset: 0, turn: 0 });
+    expect(mockTable.movePiece).lastCalledWith(robot, {
+      xOffset: -1,
+      yOffset: 0,
+      turn: 0,
+    });
     robot.moveForward();
-    expect(mockTable.movePiece).lastCalledWith(robot, { xOffset: 0, yOffset: 1, turn: 0 });
+    expect(mockTable.movePiece).lastCalledWith(robot, {
+      xOffset: 0,
+      yOffset: 1,
+      turn: 0,
+    });
     // check that robot calls the table to turn itself
     robot.turnLeft();
-    expect(mockTable.movePiece).lastCalledWith(robot, { xOffset: 0, yOffset: 0, turn: -1 });
+    expect(mockTable.movePiece).lastCalledWith(robot, {
+      xOffset: 0,
+      yOffset: 0,
+      turn: -1,
+    });
     robot.turnRight();
-    expect(mockTable.movePiece).lastCalledWith(robot, { xOffset: 0, yOffset: 0, turn: 1 });
+    expect(mockTable.movePiece).lastCalledWith(robot, {
+      xOffset: 0,
+      yOffset: 0,
+      turn: 1,
+    });
   });
   test("Robot, placed on table, but get kicked off by table, should return Error on all operations", () => {
     mockTable.placePiece.mockReturnValueOnce(pose);
@@ -76,5 +102,5 @@ describe("Robot", () => {
     expect(robot.moveForward()).toBeInstanceOf(Error);
     expect(robot.turnLeft()).toBeInstanceOf(Error);
     expect(robot.turnRight()).toBeInstanceOf(Error);
-  })
-})
+  });
+});

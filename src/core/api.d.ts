@@ -15,13 +15,10 @@ export type Pose = {
 };
 
 export type PoseMove = {
-  readonly xOffset: number,
-  readonly yOffset: number,
-  readonly turn: number
-}
-
-
-
+  readonly xOffset: number;
+  readonly yOffset: number;
+  readonly turn: number;
+};
 
 export interface TableError extends Error {
   reason: string;
@@ -32,7 +29,6 @@ export interface TableError extends Error {
  */
 // eslint-disable-next-line @typescript-eslint/ban-types
 export interface Table<TablePiece = {}> {
-
   // /**
   //  * Start an atomic step
   //  */
@@ -50,7 +46,6 @@ export interface Table<TablePiece = {}> {
   movePiece(piece: TablePiece, move: PoseMove): Pose | TableError;
 
   placePiece(piece: TablePiece, pose: Pose): Pose | TableError;
-
 
   /**
    * Returns a table piece's pose (coordination+orientation) by its ID. The piece must be on table already, otherwise an Error will be thrown.

@@ -54,25 +54,25 @@ describe("Empty Table", () => {
       facing: MapDirection.EAST,
     });
     // examine behaviors: turn
-    expect(
-      table.movePiece(robot, { xOffset: 0, yOffset: 0, turn: 1 })
-    ).toEqual(table.getPoseByPiece(robot));
+    expect(table.movePiece(robot, { xOffset: 0, yOffset: 0, turn: 1 })).toEqual(
+      table.getPoseByPiece(robot)
+    );
     expect(table.getPoseByPiece(robot)).toEqual({
       x: 2,
       y: 5,
       facing: MapDirection.SOUTH,
     });
-    expect(
-      table.movePiece(robot, { xOffset: 0, yOffset: 0, turn: 1 })
-    ).toEqual(table.getPoseByPiece(robot));
+    expect(table.movePiece(robot, { xOffset: 0, yOffset: 0, turn: 1 })).toEqual(
+      table.getPoseByPiece(robot)
+    );
     expect(table.getPoseByPiece(robot)).toEqual({
       x: 2,
       y: 5,
       facing: MapDirection.WEST,
     });
-    expect(
-      table.movePiece(robot, { xOffset: 0, yOffset: 0, turn: 1 })
-    ).toEqual(table.getPoseByPiece(robot));
+    expect(table.movePiece(robot, { xOffset: 0, yOffset: 0, turn: 1 })).toEqual(
+      table.getPoseByPiece(robot)
+    );
     expect(table.getPoseByPiece(robot)).toEqual({
       x: 2,
       y: 5,
@@ -103,9 +103,9 @@ describe("Empty Table", () => {
       facing: MapDirection.EAST,
     });
     // move
-    expect(
-      table.movePiece(robot, { xOffset: 1, yOffset: 0, turn: 0 })
-    ).toEqual(table.getPoseByPiece(robot));
+    expect(table.movePiece(robot, { xOffset: 1, yOffset: 0, turn: 0 })).toEqual(
+      table.getPoseByPiece(robot)
+    );
     expect(table.getPoseByPiece(robot)).toEqual({
       x: 3,
       y: 5,
@@ -139,9 +139,9 @@ describe("Empty Table", () => {
       facing: MapDirection.EAST,
     });
     // examine behaviors
-    expect(
-      table.movePiece(robot, { xOffset: 0, yOffset: 0, turn: 1 })
-    ).toEqual(table.getPoseByPiece(robot));
+    expect(table.movePiece(robot, { xOffset: 0, yOffset: 0, turn: 1 })).toEqual(
+      table.getPoseByPiece(robot)
+    );
     expect(table.getPoseByPiece(robot)).toEqual({
       x: 2,
       y: 1,

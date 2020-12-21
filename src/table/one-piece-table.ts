@@ -1,11 +1,5 @@
-import {
-  Pose,
-  PoseMove,
-  Table,
-  TableError,
-} from "../core/api";
+import { Pose, PoseMove, Table, TableError } from "../core/api";
 import { MapDirection, turn90Degrees } from "../core/map-direction";
-
 
 export const enum OnePieceTableErrorReason {
   NO_SUCH_PIECE = "NO_SUCH_PIECE",
@@ -17,7 +11,6 @@ export class OnePieceTableError extends Error implements TableError {
     super();
   }
 }
-
 
 /**
  * A simple square table, and holds at most one table piece
@@ -42,17 +35,24 @@ export class OnePieceTable<TablePiece = {}> implements Table<TablePiece> {
     };
   }
   getPoseByPiece(piece: TablePiece): Pose | TableError {
-    return this.checkPieceThen(piece, (): Pose => { return this.piecePose })
+    return this.checkPieceThen(
+      piece,
+      (): Pose => {
+        return this.piecePose;
+      }
+    );
   }
-  private checkPieceThen<F extends (...args: never[]) => unknown>(piece: TablePiece, f: F, ...args: Parameters<F>): TableError | ReturnType<F> {
+  private checkPieceThen<F extends (...args: never[]) => unknown>(
+    piece: TablePiece,
+    f: F,
+    ...args: Parameters<F>
+  ): TableError | ReturnType<F> {
     if (this.piece !== undefined && this.piece === piece) {
       return f.apply(this, args) as ReturnType<F>;
     } else {
       return new OnePieceTableError(OnePieceTableErrorReason.NO_SUCH_PIECE);
     }
   }
-
-
 
   movePiece(piece: TablePiece, move: PoseMove): Pose | TableError {
     return this.checkPieceThen(
@@ -61,19 +61,22 @@ export class OnePieceTable<TablePiece = {}> implements Table<TablePiece> {
         const newPose = {
           x: this.piecePose.x + move.xOffset,
           y: this.piecePose.y + move.yOffset,
-          facing: turn90Degrees(this.piecePose.facing, move.turn)
+          facing: turn90Degrees(this.piecePose.facing, move.turn),
         };
         if (this.isOnTable(newPose.x, newPose.y)) {
           this.piecePose = newPose;
           return this.piecePose;
         } else {
-          return new OnePieceTableError(OnePieceTableErrorReason.BEYOND_BOUNDARY);
+          return new OnePieceTableError(
+            OnePieceTableErrorReason.BEYOND_BOUNDARY
+          );
         }
-      }, move)
-  };
+      },
+      move
+    );
+  }
 
   placePiece(piece: TablePiece, pose: Pose): Pose | TableError {
-
     if (this.isOnTable(pose.x, pose.y)) {
       this.piece = piece;
       this.piecePose = pose;
