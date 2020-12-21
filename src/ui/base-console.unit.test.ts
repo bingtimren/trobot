@@ -24,7 +24,7 @@ describe("BaseStreamConsole", () => {
         );
         // allow console to process input
         await console.promiseInputClose();
-        expect(output.toString()).toEqual("Hi!\nline1\nline2\nBye!\n");
+        expect(output.toString()).toEqual("Hi!\nline1\nline2\n\nBye!\n");
         expect(error.toString()).toEqual("ERROR\n");
         done();
     })
