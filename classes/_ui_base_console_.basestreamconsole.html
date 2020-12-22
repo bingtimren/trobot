@@ -65,6 +65,18 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A console that reads one line a time from an input stream, executes the line as a command by invoking a <a href="../modules/_ui_base_console_.html#commandlinehandler">CommandLineHandler</a>, and outputs
+						the feedback to an output stream. If command handler returns an Error, outputs the error message to an error stream.</p>
+					</div>
+					<p>The console can optionally be provided a prompt, a greeting message, and a good bye message. If absent, prompt will be the default
+					<a href="https://nodejs.org/api/readline.html#readline_rl_prompt_preservecursor">readline prompt</a>, which is &#39;&gt; &#39;.</p>
+					<p>A Promise can be obtained from method <a href="_ui_base_console_.basestreamconsole.html#promiseinputclose">promiseInputClose</a>. The Promise resolves after the input stream is closed, i.e. the console is no
+					longer used. Then a main process decide to exit.</p>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -110,7 +122,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/ui/base-console.ts#L25">src/ui/base-console.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/ui/base-console.ts#L44">src/ui/base-console.ts:44</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -159,7 +171,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/ui/base-console.ts#L14">src/ui/base-console.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/ui/base-console.ts#L30">src/ui/base-console.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -179,9 +191,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/ui/base-console.ts#L17">src/ui/base-console.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/ui/base-console.ts#L36">src/ui/base-console.ts:36</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>A Promise that resolves after the input stream is closed.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>

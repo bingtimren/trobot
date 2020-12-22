@@ -68,7 +68,9 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface of a table that can hold a @{TablePiece} on top</p>
+						<p>Interface of a table that can hold table-pieces of a certain type (specified by the TablePiece type parameter).
+							Table is responsible for holding table-pieces, accept requests from table-pieces, and finally determines the <a href="../modules/_core_api_.html#pose">Pose</a>, i.e. coordination and
+						facing orientation of the table-pieces.</p>
 					</div>
 				</div>
 			</section>
@@ -121,18 +123,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/core/api.ts#L54">src/core/api.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/core/api.ts#L76">src/core/api.ts:76</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns a table piece&#39;s pose (coordination+orientation) by its ID. The piece must be on table already, otherwise an Error will be thrown.</p>
+									<p>Returns a table piece&#39;s pose. The piece must be on table already, otherwise an Error will be returned.
+										There is no guarantee that the returned pose is the same as the last returned value, if the piece itself did not trigger any movement. The table
+									finally determines the table-piece&#39;s pose, including if the table-piece is still on table.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>piece: <span class="tsd-signature-type">TablePiece</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_api_.html#pose" class="tsd-signature-type">Pose</a><span class="tsd-signature-symbol"> | </span><a href="_core_api_.tableerror.html" class="tsd-signature-type">TableError</a></h4>
@@ -149,12 +155,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/core/api.ts#L46">src/core/api.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/core/api.ts#L59">src/core/api.ts:59</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Move a piece relative to its current coordination</p>
+									<p>Move a table-piece relative to its current <a href="../modules/_core_api_.html#pose">Pose</a></p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -167,7 +173,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_api_.html#pose" class="tsd-signature-type">Pose</a><span class="tsd-signature-symbol"> | </span><a href="_core_api_.tableerror.html" class="tsd-signature-type">TableError</a></h4>
-							<p>if success, returns the end <a href="../modules/_core_api_.html#pose">Pose</a> of the piece. If unsuccess, returns a <a href="_core_api_.tableerror.html">TableError</a>.</p>
+							<p>if success, returns the end <a href="../modules/_core_api_.html#pose">Pose</a> of the piece. If unsuccess according to rule of table, returns a <a href="_core_api_.tableerror.html">TableError</a>.</p>
 						</li>
 					</ul>
 				</section>
@@ -181,9 +187,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/core/api.ts#L48">src/core/api.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/core/api.ts#L68">src/core/api.ts:68</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Place a table-piece to a <a href="../modules/_core_api_.html#pose">Pose</a></p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -194,6 +205,8 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_api_.html#pose" class="tsd-signature-type">Pose</a><span class="tsd-signature-symbol"> | </span><a href="_core_api_.tableerror.html" class="tsd-signature-type">TableError</a></h4>
+							<p>the final <a href="../modules/_core_api_.html#pose">Pose</a> of the table-piece after this operation. It&#39;s not guaranteed that the final Pose is the same as received in the parameter.
+							The table determines the final pose of the table-piece according to its rules.</p>
 						</li>
 					</ul>
 				</section>

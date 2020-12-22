@@ -65,7 +65,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Core interfaces</p>
+						<p>Core interfaces, see <a href="https://github.com/bingtimren/trobot/blob/main/DESIGN.md">DESIGN Document</a> for details.</p>
 					</div>
 				</div>
 			</section>
@@ -98,12 +98,12 @@
 					<div class="tsd-signature tsd-kind-icon">Pose<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>facing<span class="tsd-signature-symbol">: </span><a href="../enums/_core_map_direction_.mapdirection.html" class="tsd-signature-type">MapDirection</a><span class="tsd-signature-symbol">; </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/core/api.ts#L11">src/core/api.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/core/api.ts#L11">src/core/api.ts:11</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>2D coordination plus facing orientation</p>
+							<p>2D coordination (x,y) plus facing orientation of type <a href="../enums/_core_map_direction_.mapdirection.html">MapDirection</a>, an value object</p>
 						</div>
 					</div>
 					<div class="tsd-type-declaration">
@@ -127,20 +127,41 @@
 					<div class="tsd-signature tsd-kind-icon">Pose<wbr>Move<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>turn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>xOffset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>yOffset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/core/api.ts#L17">src/core/api.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/core/api.ts#L20">src/core/api.ts:20</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Represents a transition from one <a href="_core_api_.html#pose">Pose</a> to another. An value object.</p>
+						</div>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> turn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Change of facing, i.e. number of 90 degree turns, negative value represents turning left, positive value represents turning right.
+										For example, 1 means turn right, -1 means turn left, +2 or -2 means turn back, etc.</p>
+									</div>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> x<wbr>Offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Change of x coordination</p>
+									</div>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> y<wbr>Offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Change of y coordination</p>
+									</div>
+								</div>
 							</li>
 						</ul>
 					</div>

@@ -65,6 +65,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A toy robot, capable of being placed on a table, then turning itself or moving forward on the table.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -77,12 +84,6 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_table_piece_robot_.robot.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
@@ -103,26 +104,6 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Robot<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_table_piece_robot_.robot.html" class="tsd-signature-type">Robot</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/table-piece/robot.ts#L8">src/table-piece/robot.ts:8</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="_table_piece_robot_.robot.html" class="tsd-signature-type">Robot</a></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="table" class="tsd-anchor"></a>
@@ -134,9 +115,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/table-piece/robot.ts#L23">src/table-piece/robot.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/table-piece/robot.ts#L35">src/table-piece/robot.ts:35</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The table, if the robot is placed. Otherwise undefined.
+									Note that it&#39;s possible that although the robot holds the table, the table has taken the robot off it, if the table rules allow this.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_core_api_.table.html" class="tsd-signature-type">Table</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
 						</li>
 					</ul>
@@ -154,10 +141,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/table-piece/robot.ts#L44">src/table-piece/robot.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/table-piece/robot.ts#L74">src/table-piece/robot.ts:74</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the current pose of the robot on the table. There is no guarantee that the pose is not changed if the robot did not trigger any move.
+									The pose, and whether or not the robot is still on table, is ultimately determined by the table.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_api_.html#pose" class="tsd-signature-type">Pose</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_core_api_.tableerror.html#error" class="tsd-signature-type">Error</a></h4>
+							<p>the pose, or an Error, in which case most likely because the robot is not on table.</p>
 						</li>
 					</ul>
 				</section>
@@ -171,9 +165,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/table-piece/robot.ts#L50">src/table-piece/robot.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/table-piece/robot.ts#L83">src/table-piece/robot.ts:83</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Moves the robot forward, and return the end Pose, or an Error if table refused the turn.
+									The end Pose is ultimately determined by the table.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_api_.html#pose" class="tsd-signature-type">Pose</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_core_api_.tableerror.html#error" class="tsd-signature-type">Error</a></h4>
 						</li>
 					</ul>
@@ -188,9 +188,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/table-piece/robot.ts#L26">src/table-piece/robot.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/table-piece/robot.ts#L44">src/table-piece/robot.ts:44</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Place the robot on the table, at given pose.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -201,6 +206,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_api_.html#pose" class="tsd-signature-type">Pose</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_core_api_.tableerror.html" class="tsd-signature-type">TableError</a></h4>
+							<p>The final pose of the robot, if robot is placed on table. Otherwise, returns an error if table rules refused the placement.</p>
 						</li>
 					</ul>
 				</section>
@@ -214,9 +220,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/table-piece/robot.ts#L33">src/table-piece/robot.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/table-piece/robot.ts#L55">src/table-piece/robot.ts:55</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Turn the robot 90 degree left, and return the end Pose, or an Error if table refused the turn.
+									The end Pose is ultimately determined by the table.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_api_.html#pose" class="tsd-signature-type">Pose</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_core_api_.tableerror.html#error" class="tsd-signature-type">Error</a></h4>
 						</li>
 					</ul>
@@ -231,9 +243,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/table-piece/robot.ts#L38">src/table-piece/robot.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/table-piece/robot.ts#L64">src/table-piece/robot.ts:64</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Turn the robot 90 degree right, and return the end Pose, or an Error if table refused the turn.
+									The end Pose is ultimately determined by the table.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_api_.html#pose" class="tsd-signature-type">Pose</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_core_api_.tableerror.html#error" class="tsd-signature-type">Error</a></h4>
 						</li>
 					</ul>
@@ -279,9 +297,6 @@
 					<li class="current tsd-kind-class tsd-parent-kind-module">
 						<a href="_table_piece_robot_.robot.html" class="tsd-kind-icon">Robot</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_table_piece_robot_.robot.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="_table_piece_robot_.robot.html#table" class="tsd-kind-icon">table</a>
 							</li>
@@ -316,7 +331,6 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">

@@ -62,6 +62,14 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Specifications of command-line commands (text) and codes glue the text commands to
+						the <a href="../classes/_table_piece_robot_.robot.html">Robot</a> API.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -81,15 +89,20 @@
 					<a name="robotcommands" class="tsd-anchor"></a>
 					<h3>robot<wbr>Commands</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">robot<wbr>Commands<span class="tsd-signature-symbol">(</span>robot<span class="tsd-signature-symbol">: </span><a href="../classes/_table_piece_robot_.robot.html" class="tsd-signature-type">Robot</a>, table<span class="tsd-signature-symbol">: </span><a href="../interfaces/_core_api_.table.html" class="tsd-signature-type">Table</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_ui_cli_handler_.clidescriptor.html" class="tsd-signature-type">CLIDescriptor</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">robot<wbr>Commands<span class="tsd-signature-symbol">(</span>robot<span class="tsd-signature-symbol">: </span><a href="../classes/_table_piece_robot_.robot.html" class="tsd-signature-type">Robot</a>, table<span class="tsd-signature-symbol">: </span><a href="../interfaces/_core_api_.table.html" class="tsd-signature-type">Table</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_ui_cli_handler_.html#clidescriptor" class="tsd-signature-type">CLIDescriptor</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/integration/robot-commands.ts#L13">src/integration/robot-commands.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/integration/robot-commands.ts#L27">src/integration/robot-commands.ts:27</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This function glues the text commands (i.e. PLACE X,Y,F) to the <a href="../classes/_table_piece_robot_.robot.html">Robot</a> API.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -99,7 +112,9 @@
 									<h5>table: <a href="../interfaces/_core_api_.table.html" class="tsd-signature-type">Table</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_ui_cli_handler_.clidescriptor.html" class="tsd-signature-type">CLIDescriptor</a><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_ui_cli_handler_.html#clidescriptor" class="tsd-signature-type">CLIDescriptor</a><span class="tsd-signature-symbol">[]</span></h4>
+							<p>an <a href="_ui_cli_handler_.html#clidescriptor">CLIDescriptor</a> array that can be used by function <a href="_ui_cli_handler_.html#commandlinehandler">commandLineHandler</a> to
+							build a <a href="_ui_base_console_.html#commandlinehandler">CommandLineHandler</a>.</p>
 						</li>
 					</ul>
 				</section>

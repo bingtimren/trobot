@@ -64,7 +64,82 @@
 				<a href="#trobot" id="trobot" style="color: inherit; text-decoration: none;">
 					<h1>trobot</h1>
 				</a>
-				<p>The toy robot code challenge</p>
+				<p>Implementation of the toy robot code challenge.</p>
+				<a href="#design" id="design" style="color: inherit; text-decoration: none;">
+					<h2>Design</h2>
+				</a>
+				<p>Below is the project&#39;s dependency graph.</p>
+				<p><img src="dependencygraph.svg" alt=""></p>
+				<p>See <a href="https://github.com/bingtimren/trobot/blob/main/DESIGN.md">DESIGN Document</a> for the high-level design of this project and discussion about the design goals and some design decisions.</p>
+				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
+					<h2>API</h2>
+				</a>
+				<p>See <a href="https://bingtimren.github.io/trobot/">API Document</a> for details.
+				To build and browse the API document of the current code, run</p>
+				<pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> doc</span></code></pre>
+				<a href="#how-to-use-from-project-root-dir" id="how-to-use-from-project-root-dir" style="color: inherit; text-decoration: none;">
+					<h2>How To Use From Project Root Dir</h2>
+				</a>
+				<p>After cloning this project, run</p>
+				<pre><code>npm install
+npm <span class="hljs-keyword">run</span> <span class="hljs-keyword">run</span></code></pre>
+				<p>Then follow the instructions on screen.</p>
+				<a href="#how-to-install-cli-locally" id="how-to-install-cli-locally" style="color: inherit; text-decoration: none;">
+					<h2>How to Install CLI locally</h2>
+				</a>
+				<p>After cloning this project, run</p>
+				<pre><code>npm <span class="hljs-keyword">install</span>
+npm run <span class="hljs-keyword">install</span>-cli</code></pre>
+				<p>Then run <code>trobot</code> or <code>npx trobot</code> to launch the game console.</p>
+				<a href="#how-to-build" id="how-to-build" style="color: inherit; text-decoration: none;">
+					<h2>How to Build</h2>
+				</a>
+				<pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> build</span></code></pre>
+				<a href="#how-to-test" id="how-to-test" style="color: inherit; text-decoration: none;">
+					<h2>How to Test</h2>
+				</a>
+				<pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> <span class="hljs-built_in">test</span></span></code></pre>
+				<p>This will build and run all unit tests with calculation of coverage (requires 100% to pass), integration tests, and an end-to-end test.</p>
+				<pre><code>npm <span class="hljs-built_in">run</span> test:<span class="hljs-function"><span class="hljs-keyword">func</span></span></code></pre>
+				<p>This will build and run functional tests (unit tests, integration and end-to-end tests).</p>
+				<pre><code>npm <span class="hljs-built_in">run</span> test:<span class="hljs-function"><span class="hljs-keyword">func</span>:<span class="hljs-title">unit</span></span>
+npm <span class="hljs-built_in">run</span> test:<span class="hljs-function"><span class="hljs-keyword">func</span>:<span class="hljs-title">integration</span></span>
+</code></pre>
+				<p>This will run unit and integration (including e2d) tests respectively, without build.</p>
+				<pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> watch:<span class="hljs-built_in">test</span></span></code></pre>
+				<p>This will invoke jest with --watchAll, run functional tests automatically when something is changed.</p>
+				<pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> cov</span></code></pre>
+				<p>This will run all unit tests and open the coverage report page.</p>
+				<a href="#how-to-contribute" id="how-to-contribute" style="color: inherit; text-decoration: none;">
+					<h2>How to Contribute</h2>
+				</a>
+				<p>This project is hosted on Github to track issues, feature requests, and pull requests.</p>
+				<p>This project uses <a href="https://github.com/commitizen/cz-cli">commit-zen</a> to create commit messages. To commit, use <code>git cz</code>.</p>
+				<a href="#how-to-release" id="how-to-release" style="color: inherit; text-decoration: none;">
+					<h2>How to Release</h2>
+				</a>
+				<p>WARNING!!! WARNING!!! WARNING!!! WARNING!!! WARNING!!!</p>
+				<p>Running <code>npm run prepare-release</code> will first hard-reset the working dir. Don&#39;t do it before committing or stashing your changes!</p>
+				<p>WARNING!!! WARNING!!! WARNING!!! WARNING!!! WARNING!!!</p>
+				<p>Before release, run all tests, and format the codes, and COMMIT the latest changes.</p>
+				<pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> <span class="hljs-built_in">test</span></span>
+npm <span class="hljs-keyword">run</span><span class="bash"> fix</span>
+git cz</code></pre>
+				<p>Then run <code>npm run prepare-release</code> to prepare release. If everything is ok, follow instructions at the end of the on-screen messages to release.</p>
+				<a href="#ci" id="ci" style="color: inherit; text-decoration: none;">
+					<h2>CI</h2>
+				</a>
+				<p>On push or pull request events on the main branch, a CI workflow would be triggered. The workflow builds, and run all the tests on the following OS and Node versions:</p>
+				<p>OS: latest Ubuntu, Windows and MacOS
+				Node: 10.x, 12.x, 13.x</p>
+				<a href="#roadmap" id="roadmap" style="color: inherit; text-decoration: none;">
+					<h2>Roadmap</h2>
+				</a>
+				<ul>
+					<li>Introduce <a href="https://github.com/features/project-management/">project management</a> and <a href="https://guides.github.com/introduction/flow/">Github flow</a>  if the project becomes complex and team grows.</li>
+					<li>Currently only installs locally. If will release to the public, should build a CD workflow.</li>
+					<li>See DESIGN Document for thinking about the expansion of core API interfaces to model more complex games.</li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

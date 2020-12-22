@@ -62,6 +62,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Integration codes that glue everything together to build a game console.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -87,25 +94,48 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/2b4268b/src/integration/toy-robot-console.ts#L10">src/integration/toy-robot-console.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/bingtimren/trobot/blob/38a399a/src/integration/toy-robot-console.ts#L27">src/integration/toy-robot-console.ts:27</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Builds a game console for the toy robot challenge. This function
+										integrates a robot, a table, a CLI handler, and a console together,
+										provides game play through an input stream, an output stream, and an error
+									stream.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>input: <span class="tsd-signature-type">Readable</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>input stream, e.g. process.stdin</p>
+									</div>
 								</li>
 								<li>
 									<h5>output: <span class="tsd-signature-type">Writable</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>output stream, e.g. process.stdout</p>
+									</div>
 								</li>
 								<li>
 									<h5>error: <span class="tsd-signature-type">Writable</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>error output stream, e.g. process.stderr</p>
+									</div>
 								</li>
 								<li>
 									<h5>width: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>width of the table</p>
+									</div>
 								</li>
 								<li>
 									<h5>height: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>height of the table</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../classes/_ui_base_console_.basestreamconsole.html" class="tsd-signature-type">BaseStreamConsole</a></h4>
