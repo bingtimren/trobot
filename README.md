@@ -70,7 +70,7 @@ npm run test:func:unit
 npm run test:func:integration
 
 ```
-This will run unit and integration (including e2d) tests respectively, without build.
+This will run unit and integration (including e2e) tests respectively, without build.
 ```
 npm run watch:test
 ```
@@ -84,7 +84,7 @@ This will run all unit tests and open the coverage report page.
 
 This project is hosted on Github to track issues, feature requests, and pull requests.
 
-This project uses [commit-zen](https://github.com/commitizen/cz-cli) to create commit messages. To commit, use `git cz`.
+This project uses [commit-zen](https://github.com/commitizen/cz-cli) to create commit messages. To commit, use `git cz` and fill up the forms.
 
 ## How to Release
 
@@ -107,9 +107,8 @@ Then run `npm run prepare-release` to prepare release. If everything is ok, foll
 
 On push or pull request events on the main branch, a CI workflow would be triggered. The workflow builds, and run all the tests on the following OS and Node versions:
 
-OS: latest Ubuntu, Windows and MacOS
-
-Node: 10.x, 12.x, 13.x
+- OS: latest Ubuntu, Windows and MacOS
+- Node: 10.x, 12.x, 13.x
 
 ## Roadmap
 
