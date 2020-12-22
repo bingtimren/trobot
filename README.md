@@ -108,6 +108,7 @@ Then run `npm run prepare-release` to prepare release. If everything is ok, foll
 On push or pull request events on the main branch, a CI workflow would be triggered. The workflow builds, and run all the tests on the following OS and Node versions:
 
 OS: latest Ubuntu, Windows and MacOS
+
 Node: 10.x, 12.x, 13.x
 
 ## Roadmap
