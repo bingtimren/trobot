@@ -1,6 +1,6 @@
 {
   "name": "trobot",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "The toy robot code challenge",
   "repository": "https://github.com/bingtimren/trobot",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "cov:report": "open-cli coverage/lcov-report/index.html",
     "doc": "run-s doc:html doc:dependency doc:gh-fix && open-cli build/docs/index.html",
     "doc:html": "typedoc src/",
-    "doc:dependency":"depcruise --config .dependency-cruiser.js src --output-type dot src | dot -T svg > build/docs/dependencygraph.svg",
+    "doc:dependency": "depcruise --config .dependency-cruiser.js src --output-type dot src | dot -T svg > build/docs/dependencygraph.svg",
     "doc:gh-fix": "touch build/docs/.nojekyll",
     "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
     "run": "run-s build run:launch",
