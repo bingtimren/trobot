@@ -76,30 +76,30 @@ const e2eData: { desc: string; commands: string[]; outputs: RegExp[] }[] = [
     outputs: [
       WELCOME,
       new RegExp(
-        `^^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}4,0,EAST$`
+        `^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}4,0,EAST$`
       ),
       new RegExp(
-        `^^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}4,4,NORTH$`
+        `^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}4,4,NORTH$`
       ),
       new RegExp(
-        `^^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}0,4,WEST$`
+        `^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}0,4,WEST$`
       ),
       new RegExp(
-        `^^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}0,0,SOUTH$`
+        `^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}0,0,SOUTH$`
       ),
       new RegExp(
-        `^^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}0,4,NORTH$`
+        `^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}0,4,NORTH$`
       ),
       new RegExp(
-        `^^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}4,4,EAST$`
+        `^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}4,4,EAST$`
       ),
       new RegExp(
-        `^^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}4,0,SOUTH$`
+        `^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}4,0,SOUTH$`
       ),
       new RegExp(
-        `^^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}0,0,WEST$`
+        `^${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}${PROMPT}0,0,WEST$`
       ),
-      new RegExp(`^^${PROMPT}$`),
+      new RegExp(`^${PROMPT}$`),
       BYE,
     ],
   },
