@@ -5,12 +5,21 @@ Implementation of the toy robot code challenge.
 
 ## Design
 
+The project's codes are organized in the following modules:
+- core : the core interfaces that model a 2D check-board game in general, and the implementation of a MapDirection type
+- table : the concrete implementation of a Table for the code challenge
+- table-piece : the concrete implementation of a Robot, a table-piece, for the code challenge
+- ui : implementation of a general-purpose command-line console
+- integration : codes that glues the table, Robot, and ui into a robot console
+- main : launches the robot console and exists when the input is closed
+
+The principle is that the implementations of the table, table-piece and ui all just depend on the core interface and implementation (MapDirection) that is simple and stable enough to be put into the core module. Integration codes glue the implementations together into a playable game console, and the program entry (main) launches it.
+
 Below is the project's dependency graph.
 
 ![](https://raw.githubusercontent.com/bingtimren/trobot/gh-pages/dependencygraph.svg)
 
-See [DESIGN Document](https://github.com/bingtimren/trobot/blob/main/DESIGN.md) for the high-level design of this project and discussion about the design goals and some design decisions.
-
+See [DESIGN Document](https://github.com/bingtimren/trobot/blob/main/DESIGN.md) for the discussion of the high-level design of this project, the design goals and some design decisions.
 
 ## API
 
@@ -29,7 +38,7 @@ npm install
 npm run run
 ```
 
-Then follow the instructions on screen.
+Then follow the instructions on the screen.
 
 ## How to Install CLI locally
 
@@ -103,7 +112,7 @@ Node: 10.x, 12.x, 13.x
 
 ## Roadmap
 
-- Introduce [project management](https://github.com/features/project-management/) and [Github flow](https://guides.github.com/introduction/flow/)  if the project becomes complex and team grows.
+- Introduce [project management](https://github.com/features/project-management/) and [Github flow](https://guides.github.com/introduction/flow/)  if the project becomes complex and the team grows.
 - Currently only installs locally. If will release to the public, should build a CD workflow.
 - See DESIGN Document for thinking about the expansion of core API interfaces to model more complex games.
 
