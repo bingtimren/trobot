@@ -1,0 +1,3542 @@
+{
+	"id": 0,
+	"name": "Toy Robot Code Challenge",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 26,
+			"name": "\"core/api\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/bing/git/trobot/src/core/api.ts",
+			"comment": {
+				"shortText": "Core interfaces"
+			},
+			"children": [
+				{
+					"id": 33,
+					"name": "Table",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Interface of a table that can hold a @{TablePiece} on top"
+					},
+					"typeParameter": [
+						{
+							"id": 35,
+							"name": "TablePiece",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"children": [
+						{
+							"id": 44,
+							"name": "getPoseByPiece",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 45,
+									"name": "getPoseByPiece",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Returns a table piece's pose (coordination+orientation) by its ID. The piece must be on table already, otherwise an Error will be thrown."
+									},
+									"parameters": [
+										{
+											"id": 46,
+											"name": "piece",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "TablePiece",
+												"default": {
+													"type": "reflection",
+													"declaration": {
+														"id": 34,
+														"name": "__type",
+														"kind": 65536,
+														"kindString": "Type literal",
+														"flags": {
+															"isExported": true
+														},
+														"sources": [
+															{
+																"fileName": "src/core/api.ts",
+																"line": 31,
+																"character": 35
+															}
+														]
+													}
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 47,
+												"name": "Pose"
+											},
+											{
+												"type": "reference",
+												"id": 27,
+												"name": "TableError"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/core/api.ts",
+									"line": 54,
+									"character": 16
+								}
+							]
+						},
+						{
+							"id": 36,
+							"name": "movePiece",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 37,
+									"name": "movePiece",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Move a piece relative to its current coordination",
+										"returns": "if success, returns the end {@link Pose} of the piece. If unsuccess, returns a {@link TableError}.\n"
+									},
+									"parameters": [
+										{
+											"id": 38,
+											"name": "piece",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {},
+											"type": {
+												"type": "typeParameter",
+												"name": "TablePiece",
+												"default": {
+													"type": "reflection",
+													"declaration": {
+														"id": 34,
+														"name": "__type",
+														"kind": 65536,
+														"kindString": "Type literal",
+														"flags": {
+															"isExported": true
+														},
+														"sources": [
+															{
+																"fileName": "src/core/api.ts",
+																"line": 31,
+																"character": 35
+															}
+														]
+													}
+												}
+											}
+										},
+										{
+											"id": 39,
+											"name": "move",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {},
+											"type": {
+												"type": "reference",
+												"id": 52,
+												"name": "PoseMove"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 47,
+												"name": "Pose"
+											},
+											{
+												"type": "reference",
+												"id": 27,
+												"name": "TableError"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/core/api.ts",
+									"line": 46,
+									"character": 11
+								}
+							]
+						},
+						{
+							"id": 40,
+							"name": "placePiece",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 41,
+									"name": "placePiece",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 42,
+											"name": "piece",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "TablePiece",
+												"default": {
+													"type": "reflection",
+													"declaration": {
+														"id": 34,
+														"name": "__type",
+														"kind": 65536,
+														"kindString": "Type literal",
+														"flags": {
+															"isExported": true
+														},
+														"sources": [
+															{
+																"fileName": "src/core/api.ts",
+																"line": 31,
+																"character": 35
+															}
+														]
+													}
+												}
+											}
+										},
+										{
+											"id": 43,
+											"name": "pose",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"id": 47,
+												"name": "Pose"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 47,
+												"name": "Pose"
+											},
+											{
+												"type": "reference",
+												"id": 27,
+												"name": "TableError"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/core/api.ts",
+									"line": 48,
+									"character": 12
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								44,
+								36,
+								40
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/core/api.ts",
+							"line": 31,
+							"character": 22
+						}
+					],
+					"implementedBy": [
+						{
+							"type": "reference",
+							"id": 119,
+							"name": "OnePieceTable"
+						}
+					]
+				},
+				{
+					"id": 27,
+					"name": "TableError",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 32,
+							"name": "Error",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
+									"line": 984,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ErrorConstructor"
+							},
+							"extendedBy": [
+								{
+									"type": "reference",
+									"id": 27,
+									"name": "TableError"
+								},
+								{
+									"type": "reference",
+									"id": 109,
+									"name": "OnePieceTableError"
+								}
+							]
+						},
+						{
+							"id": 30,
+							"name": "message",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
+									"line": 974,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 30,
+								"name": "Error.message"
+							}
+						},
+						{
+							"id": 29,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
+									"line": 973,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 29,
+								"name": "Error.name"
+							}
+						},
+						{
+							"id": 28,
+							"name": "reason",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/core/api.ts",
+									"line": 24,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 31,
+							"name": "stack",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
+									"line": 975,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 31,
+								"name": "Error.stack"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								32,
+								30,
+								29,
+								28,
+								31
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/core/api.ts",
+							"line": 23,
+							"character": 27
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"id": 32,
+							"name": "Error"
+						}
+					],
+					"implementedBy": [
+						{
+							"type": "reference",
+							"id": 109,
+							"name": "OnePieceTableError"
+						}
+					]
+				},
+				{
+					"id": 47,
+					"name": "Pose",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "2D coordination plus facing orientation"
+					},
+					"sources": [
+						{
+							"fileName": "src/core/api.ts",
+							"line": 11,
+							"character": 16
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 48,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"children": [
+								{
+									"id": 51,
+									"name": "facing",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true,
+										"isReadonly": true
+									},
+									"sources": [
+										{
+											"fileName": "src/core/api.ts",
+											"line": 14,
+											"character": 17
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 5,
+										"name": "MapDirection"
+									}
+								},
+								{
+									"id": 49,
+									"name": "x",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true,
+										"isReadonly": true
+									},
+									"sources": [
+										{
+											"fileName": "src/core/api.ts",
+											"line": 12,
+											"character": 12
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 50,
+									"name": "y",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true,
+										"isReadonly": true
+									},
+									"sources": [
+										{
+											"fileName": "src/core/api.ts",
+											"line": 13,
+											"character": 12
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Variables",
+									"kind": 32,
+									"children": [
+										51,
+										49,
+										50
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/core/api.ts",
+									"line": 11,
+									"character": 18
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 52,
+					"name": "PoseMove",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "src/core/api.ts",
+							"line": 17,
+							"character": 20
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 53,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"children": [
+								{
+									"id": 56,
+									"name": "turn",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true,
+										"isReadonly": true
+									},
+									"sources": [
+										{
+											"fileName": "src/core/api.ts",
+											"line": 20,
+											"character": 15
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 54,
+									"name": "xOffset",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true,
+										"isReadonly": true
+									},
+									"sources": [
+										{
+											"fileName": "src/core/api.ts",
+											"line": 18,
+											"character": 18
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 55,
+									"name": "yOffset",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true,
+										"isReadonly": true
+									},
+									"sources": [
+										{
+											"fileName": "src/core/api.ts",
+											"line": 19,
+											"character": 18
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Variables",
+									"kind": 32,
+									"children": [
+										56,
+										54,
+										55
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/core/api.ts",
+									"line": 17,
+									"character": 22
+								}
+							]
+						}
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						33,
+						27
+					]
+				},
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						47,
+						52
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/core/api.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "\"core/map-direction\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/bing/git/trobot/src/core/map-direction.ts",
+			"children": [
+				{
+					"id": 5,
+					"name": "MapDirection",
+					"kind": 4,
+					"kindString": "Enumeration",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "A numeric enum of map directions, i.e. WEST, NORTH, EAST and SOUTH, maps to index 0-3"
+					},
+					"children": [
+						{
+							"id": 8,
+							"name": "EAST",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/core/map-direction.ts",
+									"line": 15,
+									"character": 6
+								}
+							],
+							"defaultValue": "2"
+						},
+						{
+							"id": 7,
+							"name": "NORTH",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/core/map-direction.ts",
+									"line": 14,
+									"character": 7
+								}
+							],
+							"defaultValue": "1"
+						},
+						{
+							"id": 9,
+							"name": "SOUTH",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/core/map-direction.ts",
+									"line": 16,
+									"character": 7
+								}
+							],
+							"defaultValue": "3"
+						},
+						{
+							"id": 6,
+							"name": "WEST",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/core/map-direction.ts",
+									"line": 13,
+									"character": 6
+								}
+							],
+							"defaultValue": "0"
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration members",
+							"kind": 16,
+							"children": [
+								8,
+								7,
+								9,
+								6
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/core/map-direction.ts",
+							"line": 12,
+							"character": 24
+						}
+					]
+				},
+				{
+					"id": 2,
+					"name": "DirectionDesc",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Direction descriptor, provides the X and Y offsets of a {@link MapDirection}"
+					},
+					"children": [
+						{
+							"id": 3,
+							"name": "xOffset",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/core/map-direction.ts",
+									"line": 5,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 4,
+							"name": "yOffset",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/core/map-direction.ts",
+									"line": 6,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								3,
+								4
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/core/map-direction.ts",
+							"line": 4,
+							"character": 30
+						}
+					]
+				},
+				{
+					"id": 10,
+					"name": "getDirectionDescFromMapDirection",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 11,
+							"name": "getDirectionDescFromMapDirection",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Return the {@link DescriptionDesc} from a {@link MapDirection}"
+							},
+							"parameters": [
+								{
+									"id": 12,
+									"name": "direction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "reference",
+										"id": 5,
+										"name": "MapDirection"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"id": 2,
+										"name": "DirectionDesc"
+									}
+								],
+								"name": "Readonly"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/core/map-direction.ts",
+							"line": 42,
+							"character": 48
+						}
+					]
+				},
+				{
+					"id": 13,
+					"name": "getDirectionNameFromDirection",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 14,
+							"name": "getDirectionNameFromDirection",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Returns name of direction"
+							},
+							"parameters": [
+								{
+									"id": 15,
+									"name": "direction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "reference",
+										"id": 5,
+										"name": "MapDirection"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/core/map-direction.ts",
+							"line": 52,
+							"character": 45
+						}
+					]
+				},
+				{
+					"id": 19,
+					"name": "getMapDirectionFromIndex",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 20,
+							"name": "getMapDirectionFromIndex",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Return numeric enum {@link MapDirection} from numeric index, return Error if index out of bound"
+							},
+							"parameters": [
+								{
+									"id": 21,
+									"name": "direction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"text": ": numeric enum index, e.g. 0 for WEST\n"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"id": 5,
+										"name": "MapDirection"
+									},
+									{
+										"type": "reference",
+										"id": 32,
+										"name": "Error"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/core/map-direction.ts",
+							"line": 74,
+							"character": 40
+						}
+					]
+				},
+				{
+					"id": 16,
+					"name": "getMapDirectionFromName",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 17,
+							"name": "getMapDirectionFromName",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Return numeric enum {@link MapDirection} mapped from name, return Error if name not found"
+							},
+							"parameters": [
+								{
+									"id": 18,
+									"name": "direction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"text": ": name of direction, e.g. WEST\n"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"id": 5,
+										"name": "MapDirection"
+									},
+									{
+										"type": "reference",
+										"id": 32,
+										"name": "Error"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/core/map-direction.ts",
+							"line": 60,
+							"character": 39
+						}
+					]
+				},
+				{
+					"id": 22,
+					"name": "turn90Degrees",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 23,
+							"name": "turn90Degrees",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Turn a {@link MapDirection} left or right multiple (n) of 90 degrees"
+							},
+							"parameters": [
+								{
+									"id": 24,
+									"name": "direction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"id": 5,
+										"name": "MapDirection"
+									}
+								},
+								{
+									"id": 25,
+									"name": "n",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"text": "number of 90 degrees to turn, positive to turn right, negative to turn left\n"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 5,
+								"name": "MapDirection"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/core/map-direction.ts",
+							"line": 88,
+							"character": 29
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"kind": 4,
+					"children": [
+						5
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						2
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						10,
+						13,
+						19,
+						16,
+						22
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/core/map-direction.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 100,
+			"name": "\"integration/robot-commands\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/bing/git/trobot/src/integration/robot-commands.ts",
+			"children": [
+				{
+					"id": 101,
+					"name": "robotCommands",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 102,
+							"name": "robotCommands",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 103,
+									"name": "robot",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 58,
+										"name": "Robot"
+									}
+								},
+								{
+									"id": 104,
+									"name": "table",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 33,
+										"name": "Table"
+									}
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"id": 85,
+									"name": "CLIDescriptor"
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/integration/robot-commands.ts",
+							"line": 13,
+							"character": 29
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						101
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/integration/robot-commands.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 181,
+			"name": "\"integration/toy-robot-console\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/bing/git/trobot/src/integration/toy-robot-console.ts",
+			"children": [
+				{
+					"id": 182,
+					"name": "buildToyRobotConsole",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 183,
+							"name": "buildToyRobotConsole",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 184,
+									"name": "input",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"name": "Readable"
+									}
+								},
+								{
+									"id": 185,
+									"name": "output",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"name": "Writable"
+									}
+								},
+								{
+									"id": 186,
+									"name": "error",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"name": "Writable"
+									}
+								},
+								{
+									"id": 187,
+									"name": "width",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 188,
+									"name": "height",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 155,
+								"name": "BaseStreamConsole"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/integration/toy-robot-console.ts",
+							"line": 10,
+							"character": 36
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						182
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/integration/toy-robot-console.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 189,
+			"name": "\"main\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/bing/git/trobot/src/main.ts",
+			"sources": [
+				{
+					"fileName": "src/main.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 57,
+			"name": "\"table-piece/robot\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/bing/git/trobot/src/table-piece/robot.ts",
+			"children": [
+				{
+					"id": 58,
+					"name": "Robot",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {},
+					"children": [
+						{
+							"id": 59,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 60,
+									"name": "new Robot",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 58,
+										"name": "Robot"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/table-piece/robot.ts",
+									"line": 8,
+									"character": 20
+								}
+							]
+						},
+						{
+							"id": 70,
+							"name": "table",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true
+							},
+							"getSignature": [
+								{
+									"id": 71,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 33,
+												"name": "Table"
+											},
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/table-piece/robot.ts",
+									"line": 23,
+									"character": 11
+								}
+							]
+						},
+						{
+							"id": 80,
+							"name": "getPose",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 81,
+									"name": "getPose",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 47,
+												"name": "Pose"
+											},
+											{
+												"type": "reference",
+												"id": 32,
+												"name": "Error"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/table-piece/robot.ts",
+									"line": 44,
+									"character": 9
+								}
+							]
+						},
+						{
+							"id": 82,
+							"name": "moveForward",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 83,
+									"name": "moveForward",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 47,
+												"name": "Pose"
+											},
+											{
+												"type": "reference",
+												"id": 32,
+												"name": "Error"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/table-piece/robot.ts",
+									"line": 50,
+									"character": 13
+								}
+							]
+						},
+						{
+							"id": 72,
+							"name": "placeOn",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 73,
+									"name": "placeOn",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 74,
+											"name": "table",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"id": 33,
+												"name": "Table"
+											}
+										},
+										{
+											"id": 75,
+											"name": "pose",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"id": 47,
+												"name": "Pose"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 47,
+												"name": "Pose"
+											},
+											{
+												"type": "reference",
+												"id": 27,
+												"name": "TableError"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/table-piece/robot.ts",
+									"line": 26,
+									"character": 9
+								}
+							]
+						},
+						{
+							"id": 76,
+							"name": "turnLeft",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 77,
+									"name": "turnLeft",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 47,
+												"name": "Pose"
+											},
+											{
+												"type": "reference",
+												"id": 32,
+												"name": "Error"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/table-piece/robot.ts",
+									"line": 33,
+									"character": 10
+								}
+							]
+						},
+						{
+							"id": 78,
+							"name": "turnRight",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 79,
+									"name": "turnRight",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 47,
+												"name": "Pose"
+											},
+											{
+												"type": "reference",
+												"id": 32,
+												"name": "Error"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/table-piece/robot.ts",
+									"line": 38,
+									"character": 11
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								59
+							]
+						},
+						{
+							"title": "Accessors",
+							"kind": 262144,
+							"children": [
+								70
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								80,
+								82,
+								72,
+								76,
+								78
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/table-piece/robot.ts",
+							"line": 8,
+							"character": 18
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						58
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/table-piece/robot.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 105,
+			"name": "\"table/one-piece-table\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/bing/git/trobot/src/table/one-piece-table.ts",
+			"children": [
+				{
+					"id": 106,
+					"name": "OnePieceTableErrorReason",
+					"kind": 4,
+					"kindString": "Enumeration",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 108,
+							"name": "BEYOND_BOUNDARY",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/table/one-piece-table.ts",
+									"line": 6,
+									"character": 17
+								}
+							],
+							"defaultValue": "\"BEYOND_BOUNDARY\""
+						},
+						{
+							"id": 107,
+							"name": "NO_SUCH_PIECE",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/table/one-piece-table.ts",
+									"line": 5,
+									"character": 15
+								}
+							],
+							"defaultValue": "\"NO_SUCH_PIECE\""
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration members",
+							"kind": 16,
+							"children": [
+								108,
+								107
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/table/one-piece-table.ts",
+							"line": 4,
+							"character": 42
+						}
+					]
+				},
+				{
+					"id": 119,
+					"name": "OnePieceTable",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "A simple square table, and holds at most one table piece"
+					},
+					"typeParameter": [
+						{
+							"id": 121,
+							"name": "TablePiece",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"children": [
+						{
+							"id": 124,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Constructs the table with given dimension"
+							},
+							"signatures": [
+								{
+									"id": 127,
+									"name": "new OnePieceTable",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Constructs the table with given dimension"
+									},
+									"parameters": [
+										{
+											"id": 128,
+											"name": "width",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 129,
+											"name": "height",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"shortText": "\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 119,
+										"name": "OnePieceTable"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/table/one-piece-table.ts",
+									"line": 22,
+									"character": 26
+								}
+							]
+						},
+						{
+							"id": 130,
+							"name": "getPoseByPiece",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 131,
+									"name": "getPoseByPiece",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 132,
+											"name": "piece",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "TablePiece",
+												"default": {
+													"type": "reflection",
+													"declaration": {
+														"id": 120,
+														"name": "__type",
+														"kind": 65536,
+														"kindString": "Type literal",
+														"flags": {
+															"isExported": true
+														},
+														"sources": [
+															{
+																"fileName": "src/table/one-piece-table.ts",
+																"line": 20,
+																"character": 39
+															}
+														]
+													}
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 47,
+												"name": "Pose"
+											},
+											{
+												"type": "reference",
+												"id": 27,
+												"name": "TableError"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/table/one-piece-table.ts",
+									"line": 37,
+									"character": 16
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 44,
+								"name": "Table.getPoseByPiece"
+							}
+						},
+						{
+							"id": 150,
+							"name": "isOnTable",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 151,
+									"name": "isOnTable",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 152,
+											"name": "x",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 153,
+											"name": "y",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/table/one-piece-table.ts",
+									"line": 95,
+									"character": 11
+								}
+							]
+						},
+						{
+							"id": 142,
+							"name": "movePiece",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 143,
+									"name": "movePiece",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 144,
+											"name": "piece",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "TablePiece",
+												"default": {
+													"type": "reflection",
+													"declaration": {
+														"id": 120,
+														"name": "__type",
+														"kind": 65536,
+														"kindString": "Type literal",
+														"flags": {
+															"isExported": true
+														},
+														"sources": [
+															{
+																"fileName": "src/table/one-piece-table.ts",
+																"line": 20,
+																"character": 39
+															}
+														]
+													}
+												}
+											}
+										},
+										{
+											"id": 145,
+											"name": "move",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"id": 52,
+												"name": "PoseMove"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 47,
+												"name": "Pose"
+											},
+											{
+												"type": "reference",
+												"id": 27,
+												"name": "TableError"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/table/one-piece-table.ts",
+									"line": 60,
+									"character": 11
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 36,
+								"name": "Table.movePiece"
+							}
+						},
+						{
+							"id": 146,
+							"name": "placePiece",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 147,
+									"name": "placePiece",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 148,
+											"name": "piece",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "TablePiece",
+												"default": {
+													"type": "reflection",
+													"declaration": {
+														"id": 120,
+														"name": "__type",
+														"kind": 65536,
+														"kindString": "Type literal",
+														"flags": {
+															"isExported": true
+														},
+														"sources": [
+															{
+																"fileName": "src/table/one-piece-table.ts",
+																"line": 20,
+																"character": 39
+															}
+														]
+													}
+												}
+											}
+										},
+										{
+											"id": 149,
+											"name": "pose",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"id": 47,
+												"name": "Pose"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 47,
+												"name": "Pose"
+											},
+											{
+												"type": "reference",
+												"id": 27,
+												"name": "TableError"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/table/one-piece-table.ts",
+									"line": 83,
+									"character": 12
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 40,
+								"name": "Table.placePiece"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								124
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								130,
+								150,
+								142,
+								146
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/table/one-piece-table.ts",
+							"line": 20,
+							"character": 26
+						}
+					],
+					"implementedTypes": [
+						{
+							"type": "reference",
+							"id": 33,
+							"typeArguments": [
+								{
+									"type": "typeParameter",
+									"name": "TablePiece",
+									"default": {
+										"type": "reflection",
+										"declaration": {
+											"id": 120,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "src/table/one-piece-table.ts",
+													"line": 20,
+													"character": 39
+												}
+											]
+										}
+									}
+								}
+							],
+							"name": "Table"
+						}
+					]
+				},
+				{
+					"id": 109,
+					"name": "OnePieceTableError",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 110,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 112,
+									"name": "new OnePieceTableError",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 113,
+											"name": "reason",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"id": 106,
+												"name": "OnePieceTableErrorReason"
+											}
+										},
+										{
+											"id": 114,
+											"name": "message",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 109,
+										"name": "OnePieceTableError"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/table/one-piece-table.ts",
+									"line": 9,
+									"character": 69
+								}
+							]
+						},
+						{
+							"id": 116,
+							"name": "message",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
+									"line": 974,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 30,
+								"name": "Error.message"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 30,
+								"name": "TableError.message"
+							}
+						},
+						{
+							"id": 115,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
+									"line": 973,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 29,
+								"name": "Error.name"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 29,
+								"name": "TableError.name"
+							}
+						},
+						{
+							"id": 111,
+							"name": "reason",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isConstructorProperty": true,
+								"isReadonly": true
+							},
+							"sources": [
+								{
+									"fileName": "src/table/one-piece-table.ts",
+									"line": 10,
+									"character": 29
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 106,
+								"name": "OnePieceTableErrorReason"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 28,
+								"name": "TableError.reason"
+							}
+						},
+						{
+							"id": 117,
+							"name": "stack",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
+									"line": 975,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 31,
+								"name": "Error.stack"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 31,
+								"name": "TableError.stack"
+							}
+						},
+						{
+							"id": 118,
+							"name": "Error",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
+									"line": 984,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ErrorConstructor"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								110
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								116,
+								115,
+								111,
+								117,
+								118
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/table/one-piece-table.ts",
+							"line": 9,
+							"character": 31
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"id": 32,
+							"name": "Error"
+						}
+					],
+					"implementedTypes": [
+						{
+							"type": "reference",
+							"id": 27,
+							"name": "TableError"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"kind": 4,
+					"children": [
+						106
+					]
+				},
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						119,
+						109
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/table/one-piece-table.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 154,
+			"name": "\"ui/base-console\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/bing/git/trobot/src/ui/base-console.ts",
+			"children": [
+				{
+					"id": 155,
+					"name": "BaseStreamConsole",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 165,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 167,
+									"name": "new BaseStreamConsole",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 168,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"name": "Readable"
+											}
+										},
+										{
+											"id": 169,
+											"name": "output",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"name": "Writable"
+											}
+										},
+										{
+											"id": 170,
+											"name": "error",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"name": "Writable"
+											}
+										},
+										{
+											"id": 171,
+											"name": "handler",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"id": 177,
+												"name": "CommandLineHandler"
+											}
+										},
+										{
+											"id": 172,
+											"name": "options",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 173,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"children": [
+														{
+															"id": 176,
+															"name": "farewellMessage",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isExported": true,
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "src/ui/base-console.ts",
+																	"line": 34,
+																	"character": 21
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "undefined"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "string"
+																	}
+																]
+															}
+														},
+														{
+															"id": 175,
+															"name": "greetingMessage",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isExported": true,
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "src/ui/base-console.ts",
+																	"line": 33,
+																	"character": 21
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "undefined"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "string"
+																	}
+																]
+															}
+														},
+														{
+															"id": 174,
+															"name": "prompt",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isExported": true,
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "src/ui/base-console.ts",
+																	"line": 32,
+																	"character": 12
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "undefined"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "string"
+																	}
+																]
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Variables",
+															"kind": 32,
+															"children": [
+																176,
+																175,
+																174
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "src/ui/base-console.ts",
+															"line": 31,
+															"character": 12
+														}
+													]
+												}
+											},
+											"defaultValue": "{}"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 155,
+										"name": "BaseStreamConsole"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/ui/base-console.ts",
+									"line": 25,
+									"character": 3
+								}
+							]
+						},
+						{
+							"id": 161,
+							"name": "isInputClosed",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true
+							},
+							"getSignature": [
+								{
+									"id": 162,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/ui/base-console.ts",
+									"line": 14,
+									"character": 19
+								}
+							]
+						},
+						{
+							"id": 163,
+							"name": "promiseInputClose",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 164,
+									"name": "promiseInputClose",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "void"
+											}
+										],
+										"name": "Promise"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/ui/base-console.ts",
+									"line": 17,
+									"character": 19
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								165
+							]
+						},
+						{
+							"title": "Accessors",
+							"kind": 262144,
+							"children": [
+								161
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								163
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/ui/base-console.ts",
+							"line": 10,
+							"character": 30
+						}
+					]
+				},
+				{
+					"id": 177,
+					"name": "CommandLineHandler",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "src/ui/base-console.ts",
+							"line": 4,
+							"character": 30
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 178,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 179,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 180,
+											"name": "command",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "reference",
+												"id": 32,
+												"name": "Error"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/ui/base-console.ts",
+									"line": 4,
+									"character": 32
+								}
+							]
+						}
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						155
+					]
+				},
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						177
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/ui/base-console.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 84,
+			"name": "\"ui/cli-handler\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/bing/git/trobot/src/ui/cli-handler.ts",
+			"children": [
+				{
+					"id": 85,
+					"name": "CLIDescriptor",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 89,
+							"name": "handler",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/ui/cli-handler.ts",
+									"line": 5,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 90,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 91,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 92,
+													"name": "parameters",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true,
+														"isRest": true
+													},
+													"type": {
+														"type": "array",
+														"elementType": {
+															"type": "intrinsic",
+															"name": "string"
+														}
+													}
+												}
+											],
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "string"
+													},
+													{
+														"type": "reference",
+														"id": 32,
+														"name": "Error"
+													}
+												]
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "src/ui/cli-handler.ts",
+											"line": 5,
+											"character": 10
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 87,
+							"name": "helpMessage",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/ui/cli-handler.ts",
+									"line": 3,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 86,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/ui/cli-handler.ts",
+									"line": 2,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 88,
+							"name": "pattern",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/ui/cli-handler.ts",
+									"line": 4,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RegExp"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								89,
+								87,
+								86,
+								88
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/ui/cli-handler.ts",
+							"line": 1,
+							"character": 30
+						}
+					]
+				},
+				{
+					"id": 93,
+					"name": "commandLineHandler",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 94,
+							"name": "commandLineHandler",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {},
+							"parameters": [
+								{
+									"id": 95,
+									"name": "commands",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"id": 85,
+											"name": "CLIDescriptor"
+										}
+									}
+								},
+								{
+									"id": 96,
+									"name": "enableHelp",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"defaultValue": "true"
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 97,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 98,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 99,
+													"name": "line",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "string"
+													},
+													{
+														"type": "reference",
+														"id": 32,
+														"name": "Error"
+													}
+												]
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "src/ui/cli-handler.ts",
+											"line": 13,
+											"character": 2
+										}
+									]
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/ui/cli-handler.ts",
+							"line": 10,
+							"character": 34
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						85
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						93
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/ui/cli-handler.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Modules",
+			"kind": 1,
+			"children": [
+				26,
+				1,
+				100,
+				181,
+				189,
+				57,
+				105,
+				154,
+				84
+			]
+		}
+	]
+}
