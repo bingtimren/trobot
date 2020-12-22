@@ -29,7 +29,7 @@
     "run:launch": "node build/main/main.js",
     "version": "standard-version",
     "reset-hard": "git clean -dfx && git reset --hard && npm i",
-    "prepare-release": "run-s reset-hard test check-format doc:html version doc:publish"
+    "prepare-release": "run-s reset-hard test check-format doc:html doc:gh-fix version doc:publish"
   },
   "engines": {
     "node": ">=10"
