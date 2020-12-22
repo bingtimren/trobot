@@ -8,5 +8,6 @@
     "target":"ES6", 
     "mode": "modules",
     "out": "build/docs",
+    "json": "build/docs/typedoc.json",
     "name": "Toy Robot Code Challenge"
 }
