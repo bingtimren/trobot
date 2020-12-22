@@ -1,5 +1,5 @@
 /**
- * Integration codes that glue everything together to build a game console. 
+ * Integration codes that glue everything together to build a game console.
  * @packageDocumentation
  */
 
@@ -14,10 +14,10 @@ import { robotCommands } from "./robot-commands";
 
 /**
  * Builds a game console for the toy robot challenge. This function
- * integrates a robot, a table, a CLI handler, and a console together, 
+ * integrates a robot, a table, a CLI handler, and a console together,
  * provides game play through an input stream, an output stream, and an error
- * stream. 
- * 
+ * stream.
+ *
  * @param input input stream, e.g. process.stdin
  * @param output output stream, e.g. process.stdout
  * @param error error output stream, e.g. process.stderr

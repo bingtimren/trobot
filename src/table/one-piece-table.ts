@@ -46,13 +46,13 @@ export class OnePieceTable<TablePiece = {}> implements Table<TablePiece> {
     };
   }
   /**
-   * This method is a decorator to another method-like function (given by the second parameter), to first check 
-   * if the given piece is the table-piece currently on this table. 
+   * This method is a decorator to another method-like function (given by the second parameter), to first check
+   * if the given piece is the table-piece currently on this table.
    * If yes, invokes the method-like function, binding "this" to the "this" object, with arguments given by the 3rd parameter.
    * If no, returns an error.
-   * @param piece 
-   * @param f 
-   * @param args 
+   * @param piece
+   * @param f
+   * @param args
    */
   private checkPieceThen<F extends (...args: never[]) => unknown>(
     piece: TablePiece,
@@ -122,8 +122,8 @@ export class OnePieceTable<TablePiece = {}> implements Table<TablePiece> {
   }
   /**
    * Determines if a coordination is on table
-   * @param x 
-   * @param y 
+   * @param x
+   * @param y
    */
   isOnTable(x: number, y: number): boolean {
     return (

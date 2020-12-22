@@ -60,7 +60,7 @@ export function getDirectionNameFromDirection(direction: MapDirection): string {
 }
 
 /**
- * Return the numeric enum {@link MapDirection} mapped from name, 
+ * Return the numeric enum {@link MapDirection} mapped from name,
  * return Error if name not found.
  * @param direction : name of direction, e.g. WEST
  */

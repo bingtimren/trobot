@@ -1,6 +1,6 @@
 /**
  * A reusable command line console, responsible for reading in and handling the commands one line at a time.
- * 
+ *
  * The console delegates handlement of the commands to a {@link CommandLineHandler}, which must be provided upon construction.
  * @packageDocumentation
  */
@@ -8,20 +8,19 @@
 import * as readline from "readline";
 import { Readable, Writable } from "stream";
 /**
- * A command line handler that accepts a command line once a time, and returns a string feedback 
+ * A command line handler that accepts a command line once a time, and returns a string feedback
  * if command is executed successfully, or an Error if not.
  */
 export type CommandLineHandler = (command: string) => string | Error;
 
-
 /**
  * A console that reads one line a time from an input stream, executes the line as a command by invoking a {@link CommandLineHandler}, and outputs
- * the feedback to an output stream. If command handler returns an Error, outputs the error message to an error stream. 
- * 
- * The console can optionally be provided a prompt, a greeting message, and a good bye message. If absent, prompt will be the default 
+ * the feedback to an output stream. If command handler returns an Error, outputs the error message to an error stream.
+ *
+ * The console can optionally be provided a prompt, a greeting message, and a good bye message. If absent, prompt will be the default
  * [readline prompt](https://nodejs.org/api/readline.html#readline_rl_prompt_preservecursor), which is '> '.
- * 
- * A Promise can be obtained from method {@link promiseInputClose}. The Promise resolves after the input stream is closed, i.e. the console is no 
+ *
+ * A Promise can be obtained from method {@link promiseInputClose}. The Promise resolves after the input stream is closed, i.e. the console is no
  * longer used. Then a main process decide to exit.
  */
 export class BaseStreamConsole {
@@ -88,7 +87,7 @@ export class BaseStreamConsole {
 
 /**
  * Adds a new-line to received string if it does not already ended with one
- * @param s 
+ * @param s
  */
 function addNewlineToEndOfString(s: string): string {
   return s.endsWith("\n") ? s : s + "\n";
