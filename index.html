@@ -115,7 +115,7 @@ npm run <span class="hljs-keyword">install</span>-cli</code></pre>
 				<pre><code>npm <span class="hljs-built_in">run</span> test:<span class="hljs-function"><span class="hljs-keyword">func</span>:<span class="hljs-title">unit</span></span>
 npm <span class="hljs-built_in">run</span> test:<span class="hljs-function"><span class="hljs-keyword">func</span>:<span class="hljs-title">integration</span></span>
 </code></pre>
-				<p>This will run unit and integration (including e2d) tests respectively, without build.</p>
+				<p>This will run unit and integration (including e2e) tests respectively, without build.</p>
 				<pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> watch:<span class="hljs-built_in">test</span></span></code></pre>
 				<p>This will invoke jest with --watchAll, run functional tests automatically when something is changed.</p>
 				<pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> cov</span></code></pre>
@@ -124,7 +124,7 @@ npm <span class="hljs-built_in">run</span> test:<span class="hljs-function"><spa
 					<h2>How to Contribute</h2>
 				</a>
 				<p>This project is hosted on Github to track issues, feature requests, and pull requests.</p>
-				<p>This project uses <a href="https://github.com/commitizen/cz-cli">commit-zen</a> to create commit messages. To commit, use <code>git cz</code>.</p>
+				<p>This project uses <a href="https://github.com/commitizen/cz-cli">commit-zen</a> to create commit messages. To commit, use <code>git cz</code> and fill up the forms.</p>
 				<a href="#how-to-release" id="how-to-release" style="color: inherit; text-decoration: none;">
 					<h2>How to Release</h2>
 				</a>
@@ -140,8 +140,10 @@ git cz</code></pre>
 					<h2>CI</h2>
 				</a>
 				<p>On push or pull request events on the main branch, a CI workflow would be triggered. The workflow builds, and run all the tests on the following OS and Node versions:</p>
-				<p>OS: latest Ubuntu, Windows and MacOS</p>
-				<p>Node: 10.x, 12.x, 13.x</p>
+				<ul>
+					<li>OS: latest Ubuntu, Windows and MacOS</li>
+					<li>Node: 10.x, 12.x, 13.x</li>
+				</ul>
 				<a href="#roadmap" id="roadmap" style="color: inherit; text-decoration: none;">
 					<h2>Roadmap</h2>
 				</a>
