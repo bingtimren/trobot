@@ -22,7 +22,7 @@
     "cov": "run-s -c build cov:unit cov:report",
     "cov:unit": "jest --testPathPattern=unit.test.ts$ --collectCoverage",
     "cov:report": "open-cli coverage/lcov-report/index.html",
-    "doc": "run-s doc:html doc:dependency doc:gh-fix && open-cli build/docs/index.html",
+    "doc": "run-s doc:html doc:gh-fix && open-cli build/docs/index.html",
     "doc:html": "typedoc src/ && depcruise --config .dependency-cruiser.js src --output-type dot src | dot -T svg > build/docs/dependencygraph.svg",
     "doc:gh-fix": "touch build/docs/.nojekyll",
     "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
