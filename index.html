@@ -68,9 +68,19 @@
 				<a href="#design" id="design" style="color: inherit; text-decoration: none;">
 					<h2>Design</h2>
 				</a>
+				<p>The project&#39;s codes are organized in the following modules:</p>
+				<ul>
+					<li>core : the core interfaces that model a 2D check-board game in general, and the implementation of a MapDirection type</li>
+					<li>table : the concrete implementation of a Table for the code challenge</li>
+					<li>table-piece : the concrete implementation of a Robot, a table-piece, for the code challenge</li>
+					<li>ui : implementation of a general-purpose command-line console</li>
+					<li>integration : codes that glues the table, Robot, and ui into a robot console</li>
+					<li>main : launches the robot console and exists when the input is closed</li>
+				</ul>
+				<p>The principle is that the implementations of the table, table-piece and ui all just depend on the core interface and implementation (MapDirection) that is simple and stable enough to be put into the core module. Integration codes glue the implementations together into a playable game console, and the program entry (main) launches it.</p>
 				<p>Below is the project&#39;s dependency graph.</p>
 				<p><img src="https://raw.githubusercontent.com/bingtimren/trobot/gh-pages/dependencygraph.svg" alt=""></p>
-				<p>See <a href="https://github.com/bingtimren/trobot/blob/main/DESIGN.md">DESIGN Document</a> for the high-level design of this project and discussion about the design goals and some design decisions.</p>
+				<p>See <a href="https://github.com/bingtimren/trobot/blob/main/DESIGN.md">DESIGN Document</a> for the discussion of the high-level design of this project, the design goals and some design decisions.</p>
 				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
 					<h2>API</h2>
 				</a>
@@ -83,7 +93,7 @@
 				<p>After cloning this project, run</p>
 				<pre><code>npm install
 npm <span class="hljs-keyword">run</span> <span class="hljs-keyword">run</span></code></pre>
-				<p>Then follow the instructions on screen.</p>
+				<p>Then follow the instructions on the screen.</p>
 				<a href="#how-to-install-cli-locally" id="how-to-install-cli-locally" style="color: inherit; text-decoration: none;">
 					<h2>How to Install CLI locally</h2>
 				</a>
@@ -136,7 +146,7 @@ git cz</code></pre>
 					<h2>Roadmap</h2>
 				</a>
 				<ul>
-					<li>Introduce <a href="https://github.com/features/project-management/">project management</a> and <a href="https://guides.github.com/introduction/flow/">Github flow</a>  if the project becomes complex and team grows.</li>
+					<li>Introduce <a href="https://github.com/features/project-management/">project management</a> and <a href="https://guides.github.com/introduction/flow/">Github flow</a>  if the project becomes complex and the team grows.</li>
 					<li>Currently only installs locally. If will release to the public, should build a CD workflow.</li>
 					<li>See DESIGN Document for thinking about the expansion of core API interfaces to model more complex games.</li>
 				</ul>
