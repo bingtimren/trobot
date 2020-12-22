@@ -5,7 +5,12 @@ Implementation of the toy robot code challenge.
 
 ## Design
 
+Below is the project's dependency graph.
+
+![](dependencygraph.svg)
+
 See [DESIGN Document](https://github.com/bingtimren/trobot/blob/main/DESIGN.md) for the high-level design of this project and discussion about the design goals and some design decisions.
+
 
 ## API
 
