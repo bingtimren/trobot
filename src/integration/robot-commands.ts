@@ -1,3 +1,9 @@
+/**
+ * Specifications of command-line commands (text) and codes glue the text commands to
+ * the {@link Robot} API.
+ * 
+ * @packageDocumentation
+ */
 import { Pose, Table } from "../core/api";
 import {
   getDirectionNameFromDirection,
@@ -10,6 +16,14 @@ function returnStringOrError(response: Pose | Error): string | Error {
   return response instanceof Error ? response : "";
 }
 
+/**
+ * This function glues the text commands (i.e. PLACE X,Y,F) to the {@link Robot} API. 
+ * 
+ * @param robot 
+ * @param table 
+ * @returns an {@link CLIDescriptor} array that can be used by function {@link commandLineHandler} to 
+ * build a {@link CommandLineHandler}. 
+ */
 export function robotCommands(robot: Robot, table: Table): CLIDescriptor[] {
   return [
     {
@@ -70,8 +84,8 @@ export function robotCommands(robot: Robot, table: Table): CLIDescriptor[] {
         return poseOrError instanceof Error
           ? poseOrError
           : `${poseOrError.x},${poseOrError.y},${getDirectionNameFromDirection(
-              poseOrError.facing
-            )}`;
+            poseOrError.facing
+          )}`;
       },
     },
   ];

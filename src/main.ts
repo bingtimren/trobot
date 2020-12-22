@@ -1,3 +1,9 @@
+#!/usr/bin/env node
+
+/**
+ * Entry point of the game console
+ * @packageDocumentation
+ */
 import { buildToyRobotConsole } from "./integration/toy-robot-console";
 
 const WIDTH = 5;
@@ -11,6 +17,7 @@ const console = buildToyRobotConsole(
   HEIGHT
 );
 
+// exit when user ends input
 console.promiseInputClose().then(() => {
   process.exit(0);
 });

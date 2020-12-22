@@ -4,7 +4,7 @@
 
 The goals of the design is:
 - Achieve the specified functionality of this code challenge
-- Programming for interface: design a set of core interfaces as the API that set out the main entities of the system and their interactions. Implementations should depend on interfaces, not implementations, as much as possible.
+- Programming for interface: design a set of core interfaces (API) that set out the main entities, their behaviors and interactions. Implementations should depend on these core interfaces, not other implementations, as much as possible.
 - Encapsulate future changes: The API design should consider future changes of the game. The core interfaces can be expanded when the game becomes more sophisticated, but the existing API should be stable. Evolution of the game should not require frequent breaking-changes of the core interfaces. However, this should not add too much work to the implementation of the current functionality.
 - Modular: the entities should have clearly separated responsibilities, can be developed and tested independently, with knowledge of the other associated entities only from the core interfaces. Development of one entity should not depend on the concrete implementations of the associated entities, when possible. 
 - Don't repeat yourself. Write reusable codes.
@@ -24,6 +24,16 @@ At the current design, there is no specification of the base type of Table-piece
 When placed on a Table, a Table-piece has a coordination and faces a direction, represented by a value type "Pose". The Table, not the Table-piece, maintains the coordination of the Table-piece on the Table. This allows the Table has the final say about the Table-piece's Pose, therefore allows the Table to enforce its rules, and the ability to construct some sophisticated mechanisms on the table (e.g. walls, portals, conveyor belts, etc.). A Table-piece should always enquiry the Table for its Pose, and should not assume its Pose stays the same if the Table-piece does not take any action (e.g. when the Table-piece sits on a conveyor belt, or is killed by an opponent Table-piece).
 
 ### Move and Move Steps
+
+  // /**
+  //  * Start an atomic step
+  //  */
+  // startStep():void|TableError;
+  // /**
+  //  * finish an atomic step
+  //  */
+  // finishStep():void|TableError;
+
 
 A Move represents an atomic move in the game. 
  Table-piece can take a move, represented in a value type Move. A Move is a list of Steps. Steps include Travel steps and Drop steps. A Move is atomic, either success or fail. If success, all Steps in the Move success. If fail, the Move takes no effect. There is no partial success of a Move. 

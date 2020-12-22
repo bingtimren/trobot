@@ -1,5 +1,12 @@
 /**
- * Direction descriptor, provides the X and Y offsets of a {@link MapDirection}
+ * Implements a direction system commonly used by maps. Provides a direction type (an enum), and functions for converting the direction type to
+ * and from number and string, as well as for handling the directions (turning).
+ * @packageDocumentation
+ */
+
+/**
+ * Direction descriptor, provides the X and Y offsets of a {@link MapDirection}. NORTH corresponds
+ * to x+1, EAST corresponds to y+1
  */
 export interface DirectionDesc {
   xOffset: number;
@@ -7,7 +14,7 @@ export interface DirectionDesc {
 }
 
 /**
- * A numeric enum of map directions, i.e. WEST, NORTH, EAST and SOUTH, maps to index 0-3
+ * A numeric enum of map directions, i.e. WEST, NORTH, EAST and SOUTH, maps to index from 0 to 3
  */
 export enum MapDirection {
   WEST = 0,
@@ -15,7 +22,6 @@ export enum MapDirection {
   EAST = 2,
   SOUTH = 3,
 }
-
 const mapDirs: DirectionDesc[] = [
   {
     xOffset: -1,
@@ -46,7 +52,7 @@ export function getDirectionDescFromMapDirection(
 }
 
 /**
- * Returns name of direction
+ * Returns the name of a direction, e.g. WEST
  * @param direction
  */
 export function getDirectionNameFromDirection(direction: MapDirection): string {
@@ -54,7 +60,8 @@ export function getDirectionNameFromDirection(direction: MapDirection): string {
 }
 
 /**
- * Return numeric enum {@link MapDirection} mapped from name, return Error if name not found
+ * Return the numeric enum {@link MapDirection} mapped from name, 
+ * return Error if name not found.
  * @param direction : name of direction, e.g. WEST
  */
 export function getMapDirectionFromName(
@@ -84,6 +91,7 @@ export function getMapDirectionFromIndex(
  * Turn a {@link MapDirection} left or right multiple (n) of 90 degrees
  * @param direction
  * @param n number of 90 degrees to turn, positive to turn right, negative to turn left
+ * @returns the result direction after the turns
  */
 export function turn90Degrees(
   direction: MapDirection,

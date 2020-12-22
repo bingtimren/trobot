@@ -5,6 +5,7 @@
   "repository": "https://github.com/bingtimren/trobot",
   "license": "MIT",
   "keywords": [],
+  "bin": "build/main/main.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "fix": "run-s fix:*",
@@ -29,7 +30,9 @@
     "run:launch": "node build/main/main.js",
     "version": "standard-version",
     "reset-hard": "git clean -dfx && git reset --hard && npm i",
-    "prepare-release": "run-s reset-hard test check-format doc:html doc:gh-fix version doc:publish"
+    "prepare-release": "run-s reset-hard test check-format doc:html doc:gh-fix version doc:publish",
+    "install-cli": "run-s build install-cli:link",
+    "install-cli:link": "npm link"
   },
   "engines": {
     "node": ">=10"

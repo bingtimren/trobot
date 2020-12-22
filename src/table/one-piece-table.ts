@@ -1,11 +1,22 @@
+/**
+ * A simple {@link Table} implementation for the code challenge
+ * @packageDocumentation
+ */
+
 import { Pose, PoseMove, Table, TableError } from "../core/api";
 import { MapDirection, turn90Degrees } from "../core/map-direction";
 
+/**
+ * Reason of errors, according to table's rules
+ */
 export const enum OnePieceTableErrorReason {
   NO_SUCH_PIECE = "NO_SUCH_PIECE",
   BEYOND_BOUNDARY = "BEYOND_BOUNDARY",
 }
 
+/**
+ * Implementation of {@link TableError} according to rules of this table
+ */
 export class OnePieceTableError extends Error implements TableError {
   constructor(readonly reason: OnePieceTableErrorReason, message: string) {
     super(message);
@@ -13,7 +24,7 @@ export class OnePieceTableError extends Error implements TableError {
 }
 
 /**
- * A simple square table, and holds at most one table piece
+ * A simple square table, which holds at most one table piece
  */
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -34,14 +45,15 @@ export class OnePieceTable<TablePiece = {}> implements Table<TablePiece> {
       facing: MapDirection.EAST,
     };
   }
-  getPoseByPiece(piece: TablePiece): Pose | TableError {
-    return this.checkPieceThen(
-      piece,
-      (): Pose => {
-        return this.piecePose;
-      }
-    );
-  }
+  /**
+   * This method is a decorator to another method-like function (given by the second parameter), to first check 
+   * if the given piece is the table-piece currently on this table. 
+   * If yes, invokes the method-like function, binding "this" to the "this" object, with arguments given by the 3rd parameter.
+   * If no, returns an error.
+   * @param piece 
+   * @param f 
+   * @param args 
+   */
   private checkPieceThen<F extends (...args: never[]) => unknown>(
     piece: TablePiece,
     f: F,
@@ -56,30 +68,46 @@ export class OnePieceTable<TablePiece = {}> implements Table<TablePiece> {
       );
     }
   }
-
+  /**
+   * @inheritdoc
+   */
+  getPoseByPiece(piece: TablePiece): Pose | TableError {
+    return this.checkPieceThen(
+      piece,
+      (): Pose => {
+        return this.piecePose;
+      }
+    );
+  }
+  /**
+   * @inheritdoc
+   */
   movePiece(piece: TablePiece, move: PoseMove): Pose | TableError {
     return this.checkPieceThen(
       piece,
-      (move: PoseMove): Pose | TableError => {
-        const newPose = {
-          x: this.piecePose.x + move.xOffset,
-          y: this.piecePose.y + move.yOffset,
-          facing: turn90Degrees(this.piecePose.facing, move.turn),
-        };
-        if (this.isOnTable(newPose.x, newPose.y)) {
-          this.piecePose = newPose;
-          return this.piecePose;
-        } else {
-          return new OnePieceTableError(
-            OnePieceTableErrorReason.BEYOND_BOUNDARY,
-            "Would fall off table."
-          );
-        }
-      },
+      OnePieceTable.prototype.safeMovePiece,
       move
     );
   }
-
+  private safeMovePiece(move: PoseMove): Pose | TableError {
+    const newPose = {
+      x: this.piecePose.x + move.xOffset,
+      y: this.piecePose.y + move.yOffset,
+      facing: turn90Degrees(this.piecePose.facing, move.turn),
+    };
+    if (this.isOnTable(newPose.x, newPose.y)) {
+      this.piecePose = newPose;
+      return this.piecePose;
+    } else {
+      return new OnePieceTableError(
+        OnePieceTableErrorReason.BEYOND_BOUNDARY,
+        "Would fall off table."
+      );
+    }
+  }
+  /**
+   * @inheritdoc
+   */
   placePiece(piece: TablePiece, pose: Pose): Pose | TableError {
     if (this.isOnTable(pose.x, pose.y)) {
       this.piece = piece;
@@ -92,6 +120,11 @@ export class OnePieceTable<TablePiece = {}> implements Table<TablePiece> {
       );
     }
   }
+  /**
+   * Determines if a coordination is on table
+   * @param x 
+   * @param y 
+   */
   isOnTable(x: number, y: number): boolean {
     return (
       Number.isInteger(x) &&
