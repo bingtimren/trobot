@@ -1,28 +1,16 @@
-import { robotCommands } from "./factory/robot-commands";
-import { Robot } from "./table-piece/robot";
-import { OnePieceTable } from "./table/one-piece-table";
-import { BaseStreamConsole } from "./ui/base-console";
-import { commandLineHandler } from "./ui/cli-handler";
+import { buildToyRobotConsole } from "./integration/toy-robot-console";
 
 const WIDTH = 5;
 const HEIGHT = 5;
 
-export const robot = new Robot();
-export const table = new OnePieceTable(WIDTH, HEIGHT);
-export const commands = robotCommands(robot, table);
-export const cliHandler = commandLineHandler(commands, true);
-const console = new BaseStreamConsole(
+const console = buildToyRobotConsole(
   process.stdin,
   process.stdout,
   process.stderr,
-  cliHandler,
-  {
-    greetingMessage:
-      "Welcome! For help of commands, type 'help'. To exit, press 'ctrl+c' or 'ctrl+d'.",
-    farewellMessage: "Bye!",
-    prompt: "command: ",
-  }
+  WIDTH,
+  HEIGHT
 );
+
 console.promiseInputClose().then(() => {
   process.exit(0);
 });
